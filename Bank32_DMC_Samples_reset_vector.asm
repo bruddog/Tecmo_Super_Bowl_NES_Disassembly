@@ -31,16 +31,16 @@ END_OF_TOUCHDOWN:
 	.INCBIN "TSB.nes", $3F600, $10			; *** not used
 
 DMC_DOWN_VOICE_DATA:						; DMC “DOWN”
-	.INCBIN "TSB.nes", $3F600, $500	
+	.INCBIN "TSB.nes", $3F610, $500	
 
 DMC_HUT_VOICE_DATA:							; DMC “HUT”
-	.INCBIN "TSB.nes", $3FB00, $300	
+	.INCBIN "TSB.nes", $3FB10, $300	
 
 DMC_HIGH_SNARE_DRUM_DATA:					; DMC SNARE DRUM HIGH *** uses last 0x80 bytes of hut as start (probably a BUG)
-	.INCBIN "TSB.nes", $3FE00, $170	
+	.INCBIN "TSB.nes", $3FE10, $170	
 
 END_HIGH_SNARE:
-	.INCBIN "TSB.nes", $3FF70, $10			; *** not used
+	.INCBIN "TSB.nes", $3FF80, $10			; *** not used
 	
 .PAD $FFF0, $FF
 
