@@ -1,0 +1,254 @@
+Defensive Extra: 00
+
+RE BF57:Cry(1E)// 
+NT BF59:Cry(32)// 
+LE BF5B:Cry(46)// 
+ROLB BF57:Cry(1E)// 
+RILB BF59:Cry(32)// 
+LILB BF5B:Cry(46)// 
+LOLB BF57:Cry(1E)// 
+RCB BF59:Cry(32)// 
+LCB BF5B:Cry(46)// 
+FS BF57:Cry(1E)// 
+SS BF59:Cry(32)// 
+MAN BF5B:Cry(46)// 
+
+
+Defensive Extra: 01
+
+RE BF5D:Boost-MS(FC); FC(FF E0); Block-FS; LoopBack FA// 
+NT BF65:Boost-MS(FC); FC(FF E0); Block-LOLB; LoopBack FA// 
+LE BF6D:Boost-MS(FC); FC(00 20); Block-SS; LoopBack FA// 
+ROLB BF75:Boost-MS(FC); FC(FF E0); Block-LILB; LoopBack FA// 
+RILB BF7D:Boost-MS(FC); FC(FF E0); Block-RCB; LoopBack FA// 
+LILB BF85:Boost-MS(FC); FC(FF E0); Block-LCB; LoopBack FA// 
+LOLB BF8D:Boost-MS(FC); FC(FF E0); Block-LE; LoopBack FA// 
+RCB BF95:Boost-MS(FC); FC(FF E0); Block-ROLB; LoopBack FA// 
+LCB BF9D:Boost-MS(FC); FC(FF E0); Block-LILB; LoopBack FA// 
+FS BFA5:Boost-MS(FC); FC(FF E0); Block-NT; LoopBack FA// 
+SS BFAD:Boost-MS(FC); FC(FF E0); Block-RE; LoopBack FA// 
+MAN BFB5:Boost-MS(00); Boost-RP(03); Boost-MS(EF); TakeControl; ComputerTakeControl; LoopBack FF// 
+
+
+Defensive Extra: 02
+
+RE BF4C:Boost-MS(00); TakeControl; LoopBack F5; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+NT BF44:Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+LE BF44:Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+ROLB BF44:Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+RILB BF44:Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+LILB BF44:Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+LOLB BF44:Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+RCB BF44:Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+LCB BF44:Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+FS BF44:Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+SS BF44:Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+MAN BF4C:Boost-MS(00); TakeControl; LoopBack F5; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+
+
+Defensive Extra: 03
+
+RE BF2A:Boost-MS(00); FC(FF E0); F5-Pause(01 50); LoopForward 12; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+NT BF34:FC(FF E0); F5-Pause(01 50); LoopForward 0A; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+LE BF3C:FC(FF E0); F5-Pause(01 50); LoopForward 02; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+ROLB BF2A:Boost-MS(00); FC(FF E0); F5-Pause(01 50); LoopForward 12; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+RILB BF34:FC(FF E0); F5-Pause(01 50); LoopForward 0A; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+LILB BF3C:FC(FF E0); F5-Pause(01 50); LoopForward 02; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+LOLB BF2A:Boost-MS(00); FC(FF E0); F5-Pause(01 50); LoopForward 12; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+RCB BF34:FC(FF E0); F5-Pause(01 50); LoopForward 0A; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+LCB BF3C:FC(FF E0); F5-Pause(01 50); LoopForward 02; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+FS BF2A:Boost-MS(00); FC(FF E0); F5-Pause(01 50); LoopForward 12; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+SS BF34:FC(FF E0); F5-Pause(01 50); LoopForward 0A; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+MAN BF4C:Boost-MS(00); TakeControl; LoopBack F5; Boost-MS(00); FC(FF E0); FA; LoopBack FF// 
+
+
+Defensive Extra: 04
+
+RE A093:MoveRelative(00 A0); SetToBlock(FF E0); CD(00 60); LoopBack FA// 
+NT A093:MoveRelative(00 A0); SetToBlock(FF E0); CD(00 60); LoopBack FA// 
+LE A093:MoveRelative(00 A0); SetToBlock(FF E0); CD(00 60); LoopBack FA// 
+ROLB A093:MoveRelative(00 A0); SetToBlock(FF E0); CD(00 60); LoopBack FA// 
+RILB A093:MoveRelative(00 A0); SetToBlock(FF E0); CD(00 60); LoopBack FA// 
+LILB A093:MoveRelative(00 A0); SetToBlock(FF E0); CD(00 60); LoopBack FA// 
+LOLB A093:MoveRelative(00 A0); SetToBlock(FF E0); CD(00 60); LoopBack FA// 
+RCB A093:MoveRelative(00 A0); SetToBlock(FF E0); CD(00 60); LoopBack FA// 
+LCB A093:MoveRelative(00 A0); SetToBlock(FF E0); CD(00 60); LoopBack FA// 
+FS A09E:B4-MoveAbsolute(80 30); Boost-HP(06); LoopBack F3; SetToBlock(FF E0); CD(00 60); LoopBack FA// 
+SS AACD:Boost-MS(10); SwitchIcon; Boost-MS(00); TakeControl; ComputerTakeControl; LoopBack FF// 
+MAN AACD:Boost-MS(10); SwitchIcon; Boost-MS(00); TakeControl; ComputerTakeControl; LoopBack FF// 
+
+
+Defensive Extra: 05
+
+RE AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+NT AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+LE AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+ROLB AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+RILB AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+LILB AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+LOLB AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+RCB AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+LCB AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+FS AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+SS AABA:Boost-MS(16); FC(FF E0); DD-PassRush; LoopBack FC// 
+MAN AAB3:TakeControl; FC(FF E0); DD-PassRush; LoopBack FC// 
+
+
+Defensive Extra: 06
+
+RE BF5D:Boost-MS(FC); FC(FF E0); Block-FS; LoopBack FA// 
+NT BF65:Boost-MS(FC); FC(FF E0); Block-LOLB; LoopBack FA// 
+LE BF6D:Boost-MS(FC); FC(00 20); Block-SS; LoopBack FA// 
+ROLB BF75:Boost-MS(FC); FC(FF E0); Block-LILB; LoopBack FA// 
+RILB BF7D:Boost-MS(FC); FC(FF E0); Block-RCB; LoopBack FA// 
+LILB BF85:Boost-MS(FC); FC(FF E0); Block-LCB; LoopBack FA// 
+LOLB BF8D:Boost-MS(FC); FC(FF E0); Block-LE; LoopBack FA// 
+RCB BF95:Boost-MS(FC); FC(FF E0); Block-ROLB; LoopBack FA// 
+LCB BF9D:Boost-MS(FC); FC(FF E0); Block-LILB; LoopBack FA// 
+FS BFA5:Boost-MS(FC); FC(FF E0); Block-NT; LoopBack FA// 
+SS BFAD:Boost-MS(FC); FC(FF E0); Block-RE; LoopBack FA// 
+MAN BFB5:Boost-MS(00); Boost-RP(03); Boost-MS(EF); TakeControl; ComputerTakeControl; LoopBack FF// 
+
+
+Defensive Extra: 07
+
+RE AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+NT AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+LE AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+ROLB AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+RILB AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+LILB AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+LOLB AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+RCB AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+LCB AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+FS AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+SS AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+MAN AAB3:TakeControl; FC(FF E0); DD-PassRush; LoopBack FC// 
+
+
+Defensive Extra: 08
+
+RE BF5D:Boost-MS(FC); FC(FF E0); Block-FS; LoopBack FA// 
+NT BF65:Boost-MS(FC); FC(FF E0); Block-LOLB; LoopBack FA// 
+LE BF6D:Boost-MS(FC); FC(00 20); Block-SS; LoopBack FA// 
+ROLB BF75:Boost-MS(FC); FC(FF E0); Block-LILB; LoopBack FA// 
+RILB BF7D:Boost-MS(FC); FC(FF E0); Block-RCB; LoopBack FA// 
+LILB BF85:Boost-MS(FC); FC(FF E0); Block-LCB; LoopBack FA// 
+LOLB BF8D:Boost-MS(FC); FC(FF E0); Block-LE; LoopBack FA// 
+RCB BF95:Boost-MS(FC); FC(FF E0); Block-ROLB; LoopBack FA// 
+LCB BF9D:Boost-MS(FC); FC(FF E0); Block-LILB; LoopBack FA// 
+FS BFA5:Boost-MS(FC); FC(FF E0); Block-NT; LoopBack FA// 
+SS BFAD:Boost-MS(FC); FC(FF E0); Block-RE; LoopBack FA// 
+MAN BFB5:Boost-MS(00); Boost-RP(03); Boost-MS(EF); TakeControl; ComputerTakeControl; LoopBack FF// 
+
+
+Defensive Extra: 09
+
+RE BF51:Celebrate(14)// 
+NT BF51:Celebrate(14)// 
+LE BF53:Celebrate(3C)// 
+ROLB BF55:Celebrate(50)// 
+RILB BF51:Celebrate(14)// 
+LILB BF53:Celebrate(3C)// 
+LOLB BF53:Celebrate(3C)// 
+RCB BF55:Celebrate(50)// 
+LCB BF53:Celebrate(3C)// 
+FS BF51:Celebrate(14)// 
+SS BF55:Celebrate(50)// 
+MAN BF53:Celebrate(3C)// 
+
+
+Defensive Extra: 0A
+
+RE BF51:Celebrate(14)// 
+NT BF51:Celebrate(14)// 
+LE BF53:Celebrate(3C)// 
+ROLB BF55:Celebrate(50)// 
+RILB BF51:Celebrate(14)// 
+LILB BF53:Celebrate(3C)// 
+LOLB BF53:Celebrate(3C)// 
+RCB BF55:Celebrate(50)// 
+LCB BF53:Celebrate(3C)// 
+FS BF51:Celebrate(14)// 
+SS BF55:Celebrate(50)// 
+MAN BF53:Celebrate(3C)// 
+
+
+Defensive Extra: 0B
+
+RE BF51:Celebrate(14)// 
+NT BF53:Celebrate(3C)// 
+LE BF55:Celebrate(50)// 
+ROLB BF51:Celebrate(14)// 
+RILB BF53:Celebrate(3C)// 
+LILB BF55:Celebrate(50)// 
+LOLB BF51:Celebrate(14)// 
+RCB BF53:Celebrate(3C)// 
+LCB BF55:Celebrate(50)// 
+FS BF51:Celebrate(14)// 
+SS BF53:Celebrate(3C)// 
+MAN BF55:Celebrate(50)// 
+
+
+Defensive Extra: 0C
+
+RE BF51:Celebrate(14)// 
+NT BF51:Celebrate(14)// 
+LE BF53:Celebrate(3C)// 
+ROLB BF55:Celebrate(50)// 
+RILB BF53:Celebrate(3C)// 
+LILB BF55:Celebrate(50)// 
+LOLB BF53:Celebrate(3C)// 
+RCB BF55:Celebrate(50)// 
+LCB BF51:Celebrate(14)// 
+FS BF51:Celebrate(14)// 
+SS BF53:Celebrate(3C)// 
+MAN BF53:Celebrate(3C)// 
+
+
+Defensive Extra: 0D
+
+RE A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+NT A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+LE A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+ROLB A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+RILB A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+LILB A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+LOLB A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+RCB A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+LCB A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+FS A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+SS A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+MAN A000:SetPosFromHike(F0 38); Kickoff; TakeControl; JumpTo AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+
+
+Defensive Extra: 0E
+
+RE AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+NT AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+LE AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+ROLB AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+RILB AAAD:FC(FF E0); DA-PassRush; LoopBack FC// 
+LILB AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+LOLB AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+RCB AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+LCB AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+FS AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+SS AABC:FC(FF E0); DD-PassRush; LoopBack FC// 
+MAN AAB3:TakeControl; FC(FF E0); DD-PassRush; LoopBack FC// 
+
+
+Defensive Extra: 0F
+
+RE BF5D:Boost-MS(FC); FC(FF E0); Block-FS; LoopBack FA// 
+NT BF65:Boost-MS(FC); FC(FF E0); Block-LOLB; LoopBack FA// 
+LE BF6D:Boost-MS(FC); FC(00 20); Block-SS; LoopBack FA// 
+ROLB BF75:Boost-MS(FC); FC(FF E0); Block-LILB; LoopBack FA// 
+RILB BF7D:Boost-MS(FC); FC(FF E0); Block-RCB; LoopBack FA// 
+LILB BF85:Boost-MS(FC); FC(FF E0); Block-LCB; LoopBack FA// 
+LOLB BF8D:Boost-MS(FC); FC(FF E0); Block-LE; LoopBack FA// 
+RCB BF95:Boost-MS(FC); FC(FF E0); Block-ROLB; LoopBack FA// 
+LCB BF9D:Boost-MS(FC); FC(FF E0); Block-LILB; LoopBack FA// 
+FS BFA5:Boost-MS(FC); FC(FF E0); Block-NT; LoopBack FA// 
+SS BFAD:Boost-MS(FC); FC(FF E0); Block-RE; LoopBack FA// 
+MAN BFB5:Boost-MS(00); Boost-RP(03); Boost-MS(EF); TakeControl; ComputerTakeControl; LoopBack FF// 

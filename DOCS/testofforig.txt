@@ -1,0 +1,1207 @@
+Offense: 00
+
+QB AA6A:TakeSnap; D8-MoveAbsolute(F8 D8); D8-MoveAbsolute(F8 D4); Handoff-HB; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(E8 B0); D8-MoveAbsolute(D8 B0); D8-MoveAbsolute(D0 B8); D8-MoveAbsolute(C8 D0); D8-MoveAbsolute(C8 08); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+HB AA87:F3-Pause(14); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(08 D4); TakeControl; C8-Move(B2 AA 09); C8-Move(B6 AA 05); C8-Move(BA AA 02); C7-Move(BE AA); D8-MoveAbsolute(28 E0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(30 F0); D8-MoveAbsolute(30 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AAC6:D8-MoveAbsolute(C8 20); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+WR1 AACC:F7(10); D9-MoveAbsolute(36 10); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 B78E:F7(10); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+TE BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG B82E:F3-Pause(00); LoopBack FE// 
+RG B793:28-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 01
+
+QB AA6A:TakeSnap; D8-MoveAbsolute(F8 D8); D8-MoveAbsolute(F8 D4); Handoff-HB; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(E8 B0); D8-MoveAbsolute(D8 B0); D8-MoveAbsolute(D0 B8); D8-MoveAbsolute(C8 D0); D8-MoveAbsolute(C8 08); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+HB AA87:F3-Pause(14); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(08 D4); TakeControl; C8-Move(B2 AA 09); C8-Move(B6 AA 05); C8-Move(BA AA 02); C7-Move(BE AA); D8-MoveAbsolute(28 E0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(30 F0); D8-MoveAbsolute(30 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AAC6:D8-MoveAbsolute(C8 20); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+WR1 AACC:F7(10); D9-MoveAbsolute(36 10); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 B78E:F7(10); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+TE BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG B82E:F3-Pause(00); LoopBack FE// 
+RG B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 02
+
+QB AB3E:TakeSnap; D8-MoveAbsolute(F8 D4); Handoff-HB; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(F4 BC); D8-MoveAbsolute(E8 B4); D8-MoveAbsolute(D8 B0); D8-MoveAbsolute(C8 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AA87:F3-Pause(14); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(08 D4); TakeControl; C8-Move(B2 AA 09); C8-Move(B6 AA 05); C8-Move(BA AA 02); C7-Move(BE AA); D8-MoveAbsolute(28 E0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(30 F0); D8-MoveAbsolute(30 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AB55:D8-MoveAbsolute(C8 08); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+WR1 AACC:F7(10); D9-MoveAbsolute(36 10); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE AB5B:FC(FF E0); D8-MoveAbsolute(14 E0); FaceDirection(80); F3-Pause(14); D8-MoveAbsolute(20 E8); D8-MoveAbsolute(28 00); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+OC B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+LG BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RG BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+
+
+Offense: 03
+
+QB AC16:TakeSnap; D8-MoveAbsolute(F0 D8); Handoff-HB; D8-MoveAbsolute(F0 C0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AC21:D8-MoveAbsolute(F8 D4); TakeControl; C8-Move(44 AC 09); C8-Move(48 AC 05); C8-Move(4C AC 02); C7-Move(50 AC); D8-MoveAbsolute(0C E4); D8-MoveAbsolute(14 F4); D8-MoveAbsolute(18 08); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AC58:FC(02 00); D8-MoveAbsolute(0C D8); D8-MoveAbsolute(18 E8); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+WR1 A39D:D9-MoveAbsolute(36 18); FC(FF E0); SetToBlock(06 60); CE-MoveAbsolute(F8 60); CD(08 D0); LoopBack FD// 
+WR2 BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+ 
+
+
+
+
+
+Offense: 05
+
+QB ADFF:TakeSnap; D8-MoveAbsolute(F0 E8); Pitch-HB; D8-MoveAbsolute(F0 D0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AE0A:D8-MoveAbsolute(20 C4); TakeControl; C8-Move(30 AE 09); C8-Move(34 AE 05); C8-Move(38 AE 02); C7-Move(3C AE); D8-MoveAbsolute(28 CC); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(30 E0); D8-MoveAbsolute(30 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AE44:D8-MoveAbsolute(D8 E0); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+WR1 A39D:D9-MoveAbsolute(36 18); FC(FF E0); SetToBlock(06 60); CE-MoveAbsolute(F8 60); CD(08 D0); LoopBack FD// 
+WR2 AE4A:D9-MoveAbsolute(C0 20); 2B-JumpTo BF2A:FC(FF E0); ChopBlock-SS; LoopBack FC// JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE AE53:FC(02 00); D8-MoveAbsolute(10 F8); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+LG B7C3:27-JumpTo B82E:F3-Pause(00); LoopBack FE// JumpTo AE5C:D8-MoveAbsolute(E8 E4); D8-MoveAbsolute(10 E4); D8-MoveAbsolute(20 F0); D8-MoveAbsolute(28 00); SetToBlock(0C 40); FC(FF E0); CE-MoveAbsolute(28 10); CE-MoveAbsolute(10 30); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+RG AE77:D8-MoveAbsolute(FC E8); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(20 F0); FC(FF E0); D8-MoveAbsolute(20 04); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+LT AE89:D8-MoveAbsolute(E0 F8); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RT AE8F:D8-MoveAbsolute(00 00); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 06
+
+QB ACF4:TakeSnap; D8-MoveAbsolute(F0 E0); D8-MoveAbsolute(F8 D0); Handoff-FB; D8-MoveAbsolute(00 C0); D8-MoveAbsolute(08 B8); D8-MoveAbsolute(18 B0); D8-MoveAbsolute(28 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AD0B:D8-MoveAbsolute(D4 D0); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(34 18); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB AD17:F3-Pause(19); D8-MoveAbsolute(04 C8); D8-MoveAbsolute(E8 C8); TakeControl; C8-Move(45 AD 09); C8-Move(49 AD 05); C8-Move(4D AD 02); C7-Move(51 AD); D8-MoveAbsolute(D8 D0); D8-MoveAbsolute(C8 E0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(C0 F0); D8-MoveAbsolute(C0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR1 AD59:D9-MoveAbsolute(36 28); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 A901:D9-MoveAbsolute(C0 48); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE AD5F:F7(10); D8-MoveAbsolute(D0 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG AD67:D8-MoveAbsolute(E4 E8); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 EE); D8-MoveAbsolute(C0 FC); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+RG AD76:D8-MoveAbsolute(F8 E4); D8-MoveAbsolute(D8 E4); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 F0); D8-MoveAbsolute(C4 F8); D8-MoveAbsolute(C4 00); SetToBlock(4C 20); FC(FF E0); CE-MoveAbsolute(C4 10); CE-MoveAbsolute(CC 20); CE-MoveAbsolute(E0 30); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+
+
+Offense: 07
+
+QB ACF4:TakeSnap; D8-MoveAbsolute(F0 E0); D8-MoveAbsolute(F8 D0); Handoff-FB; D8-MoveAbsolute(00 C0); D8-MoveAbsolute(08 B8); D8-MoveAbsolute(18 B0); D8-MoveAbsolute(28 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AD0B:D8-MoveAbsolute(D4 D0); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(34 18); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB AD17:F3-Pause(19); D8-MoveAbsolute(04 C8); D8-MoveAbsolute(E8 C8); TakeControl; C8-Move(45 AD 09); C8-Move(49 AD 05); C8-Move(4D AD 02); C7-Move(51 AD); D8-MoveAbsolute(D8 D0); D8-MoveAbsolute(C8 E0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(C0 F0); D8-MoveAbsolute(C0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR1 AD59:D9-MoveAbsolute(36 28); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 A901:D9-MoveAbsolute(C0 48); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE B7E8:D8-MoveAbsolute(D0 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG AD67:D8-MoveAbsolute(E4 E8); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 EE); D8-MoveAbsolute(C0 FC); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+RG B82E:F3-Pause(00); LoopBack FE// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+
+
+Offense: 08
+
+QB AE95:TakeSnap; D8-MoveAbsolute(FC D8); Handoff-FB; D8-MoveAbsolute(00 C0); D8-MoveAbsolute(10 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AEA3:D8-MoveAbsolute(30 E8); D8-MoveAbsolute(30 28); SetToBlock(0D 40); FC(FF E0); CE-MoveAbsolute(E8 50); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB AEB5:F3-Pause(14); D8-MoveAbsolute(04 CC); D8-MoveAbsolute(E8 D8); TakeControl; C8-Move(DD AE 09); C8-Move(E1 AE 05); C8-Move(E5 AE 02); C7-Move(E9 AE); D8-MoveAbsolute(DC E8); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(D0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR1 BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+WR2 A65F:D8-MoveAbsolute(C4 F8); 26-JumpTo A668:F7(10); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+TE BE36:FC(FF E0); Block-LE; LoopBack FC// 
+OC A67E:F3-Pause(06); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+LG A683:D8-MoveAbsolute(E4 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RG A689:D8-MoveAbsolute(FC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LT BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+RT B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+
+
+Offense: 09
+
+QB ACF4:TakeSnap; D8-MoveAbsolute(F0 E0); D8-MoveAbsolute(F8 D0); Handoff-FB; D8-MoveAbsolute(00 C0); D8-MoveAbsolute(08 B8); D8-MoveAbsolute(18 B0); D8-MoveAbsolute(28 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AD0B:D8-MoveAbsolute(D4 D0); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(34 18); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB AEF1:F3-Pause(1E); D8-MoveAbsolute(E8 D4); TakeControl; C8-Move(16 AF 09); C8-Move(1A AF 05); C8-Move(1E AF 02); C7-Move(22 AF); D8-MoveAbsolute(DC E4); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(D0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR1 AD59:D9-MoveAbsolute(36 28); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 A901:D9-MoveAbsolute(C0 48); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE A65F:D8-MoveAbsolute(C4 F8); 26-JumpTo A668:F7(10); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC A67E:F3-Pause(06); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+LG A683:D8-MoveAbsolute(E4 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RG A689:D8-MoveAbsolute(FC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LT BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+RT B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+
+
+
+
+
+
+
+
+Offense: 0C
+
+QB A930:TakeSnap; D8-MoveAbsolute(F0 E0); Pitch-HB; D8-MoveAbsolute(F0 9C); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A99E:F3-Pause(1E); D8-MoveAbsolute(D8 C0); D8-MoveAbsolute(C0 D0); Handoff-WR1; D8-MoveAbsolute(B8 E0); D8-MoveAbsolute(B8 08); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+FB A9B0:D8-MoveAbsolute(C8 00); D8-MoveAbsolute(C0 10); F3-Pause(0A); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+WR1 A9BB:F3-Pause(3C); D9-MoveAbsolute(36 E8); D8-MoveAbsolute(C0 C8); D8-MoveAbsolute(D0 B8); TakeControl; C8-Move(EC A9 09); C8-Move(F0 A9 05); C8-Move(F4 A9 02); C7-Move(F8 A9); D8-MoveAbsolute(E0 B0); D8-MoveAbsolute(08 B0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(18 B8); D8-MoveAbsolute(28 C8); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR2 AA00:D9-MoveAbsolute(C0 38); D9-MoveAbsolute(98 40); 27-JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// F7(10); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+TE B7D1:2B-JumpTo AA0E:D8-MoveAbsolute(14 C4); F3-Pause(01); FaceDirection(A0); F3-Pause(1E); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// JumpTo BE8A:D8-MoveAbsolute(14 C4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(22 80); LoopForward 51; FC(FF E0); PassBlock; LoopBack FC// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT B7D7:2B-JumpTo AA1A:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); F3-Pause(1E); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// JumpTo BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 0D
+
+QB AA6A:TakeSnap; D8-MoveAbsolute(F8 D8); D8-MoveAbsolute(F8 D4); Handoff-HB; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(E8 B0); D8-MoveAbsolute(D8 B0); D8-MoveAbsolute(D0 B8); D8-MoveAbsolute(C8 D0); D8-MoveAbsolute(C8 08); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+HB AAD4:F3-Pause(1E); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(08 D4); D8-MoveAbsolute(20 D8); Handoff-WR2; D8-MoveAbsolute(28 E0); D8-MoveAbsolute(30 F8); D8-MoveAbsolute(30 00); F3-Pause(64); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+FB AAEE:F3-Pause(1E); D8-MoveAbsolute(C8 18); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+WR1 BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 AAF6:F3-Pause(37); D8-MoveAbsolute(30 E0); D8-MoveAbsolute(18 CC); TakeControl; C8-Move(2A AB 09); C8-Move(2E AB 05); C8-Move(32 AB 02); C7-Move(36 AB); D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(E8 C8); D8-MoveAbsolute(D8 D0); D8-MoveAbsolute(C8 E0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(C0 F0); D8-MoveAbsolute(C0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+TE BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 0E
+
+QB B008:TakeSnap; C8-Move(3B B0 09); C8-Move(3F B0 05); C8-Move(43 B0 02); C7-Move(47 B0); D8-MoveAbsolute(F0 D8); D8-MoveAbsolute(EC D0); D8-MoveAbsolute(E0 C8); D8-MoveAbsolute(D4 C8); D8-MoveAbsolute(CC D0); TakeControl; 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(C4 E0); D8-MoveAbsolute(C0 F8); D8-MoveAbsolute(C0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+HB B04F:D8-MoveAbsolute(F0 C8); D8-MoveAbsolute(F8 D4); D8-MoveAbsolute(18 D8); D8-MoveAbsolute(30 E8); D8-MoveAbsolute(34 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+WR1 AD59:D9-MoveAbsolute(36 28); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 B076:27-JumpTo B07B:D9-MoveAbsolute(C0 28); D8-MoveAbsolute(F0 50); SetToBlock(FF E0); CE-MoveAbsolute(E0 40); CE-MoveAbsolute(E0 68); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// F7(10); D9-MoveAbsolute(C0 28); D8-MoveAbsolute(F0 50); SetToBlock(FF E0); CE-MoveAbsolute(E0 40); CE-MoveAbsolute(E0 68); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+TE B061:D8-MoveAbsolute(1C 20); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A3C8:FC(08 00); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG B067:D8-MoveAbsolute(FC E4); D8-MoveAbsolute(D8 E4); D8-MoveAbsolute(CC E8); D8-MoveAbsolute(C4 F8); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+
+Offense: 2A
+WR1 B7C9:F7(10); D9-MoveAbsolute(36 28); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+
+
+Offense: 0F
+
+QB B17B:ShotgunTakeSnap; TakeControl; C8-Move(A5 B1 09); C8-Move(A9 B1 05); C8-Move(AD B1 02); C7-Move(B1 B1); D8-MoveAbsolute(E0 BC); D8-MoveAbsolute(CC C8); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(C0 D8); D8-MoveAbsolute(BC E8); D8-MoveAbsolute(BC 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+HB B1B9:D8-MoveAbsolute(08 D0); F3-Pause(01); FaceDirection(80); SetToBlock(20 00); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB B7E2:2B-JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// JumpTo B82E:F3-Pause(00); LoopBack FE// 
+WR1 B7DD:F7(10); JumpTo AD5F:F7(10); D8-MoveAbsolute(D0 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+WR2 B076:27-JumpTo B07B:D9-MoveAbsolute(C0 28); D8-MoveAbsolute(F0 50); SetToBlock(FF E0); CE-MoveAbsolute(E0 40); CE-MoveAbsolute(E0 68); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// F7(10); D9-MoveAbsolute(C0 28); D8-MoveAbsolute(F0 50); SetToBlock(FF E0); CE-MoveAbsolute(E0 40); CE-MoveAbsolute(E0 68); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+TE B1C6:D8-MoveAbsolute(10 E8); F3-Pause(0A); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG AD67:D8-MoveAbsolute(E4 E8); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 EE); D8-MoveAbsolute(C0 FC); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+RG B1CE:D8-MoveAbsolute(F8 E4); D8-MoveAbsolute(D8 E4); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 F0); D8-MoveAbsolute(C4 F8); D8-MoveAbsolute(C4 00); SetToBlock(44 60); FC(FF E0); CE-MoveAbsolute(C4 10); CE-MoveAbsolute(CC 20); CE-MoveAbsolute(E0 30); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT B1F2:D8-MoveAbsolute(04 E0); D8-MoveAbsolute(E4 E0); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+
+
+Offense: 10
+
+QB A33A:TakeSnap; D8-MoveAbsolute(F8 E0); D8-MoveAbsolute(F8 DC); Fake-FB; D8-MoveAbsolute(F8 DA); Pitch-HB; D8-MoveAbsolute(F0 D0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A34C:D8-MoveAbsolute(E0 B0); C7-Move(82 A3); D8-MoveAbsolute(F4 B0); D8-MoveAbsolute(20 D8); TakeControl; C8-Move(72 A3 09); C8-Move(76 A3 05); C8-Move(7A A3 02); C7-Move(7E A3); D8-MoveAbsolute(28 F4); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB A386:D8-MoveAbsolute(00 CC); D8-MoveAbsolute(F8 E8); D8-MoveAbsolute(F8 38); FC(FF E0); SetToBlock(0F E0); CE-MoveAbsolute(10 50); CD(F0 20); LoopBack FD// 
+WR1 A39D:D9-MoveAbsolute(36 18); FC(FF E0); SetToBlock(06 60); CE-MoveAbsolute(F8 60); CD(08 D0); LoopBack FD// 
+WR2 A3AE:D9-MoveAbsolute(B0 F8); FC(FF E0); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+TE A3B7:F7(10); FC(19 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC A3BF:FC(40 00); D8-MoveAbsolute(EC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A3C8:FC(08 00); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG A3CE:FC(04 00); D8-MoveAbsolute(02 00); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT A3D7:FC(80 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT A3DD:FC(20 00); D8-MoveAbsolute(10 00); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 11
+
+QB A43D:TakeSnap; D8-MoveAbsolute(F0 D0); Handoff-HB; D8-MoveAbsolute(E0 C0); D8-MoveAbsolute(C8 C0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A44B:F3-Pause(14); D8-MoveAbsolute(F0 C8); TakeControl; D8-MoveAbsolute(18 D0); C8-Move(73 A4 09); C8-Move(77 A4 05); C8-Move(7B A4 02); C7-Move(7F A4); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(28 E0); D8-MoveAbsolute(30 F8); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB A487:D8-MoveAbsolute(0C D0); D8-MoveAbsolute(E0 E0); D9-MoveAbsolute(40 20); F4-Pause(64); FC(FF E0); SetToBlock(0E A0); CF; FaceDirection(E8); LoopBack FD// 
+WR1 A49D:JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+WR2 A4A0:D9-MoveAbsolute(C0 48); D9-MoveAbsolute(48 68); F4-Pause(50); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE A4AB:FC(80 00); D8-MoveAbsolute(DA F8); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+OC A4B4:FC(20 00); D8-MoveAbsolute(00 FA); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LG A4BD:D8-MoveAbsolute(E8 E4); D8-MoveAbsolute(10 E4); D8-MoveAbsolute(18 F0); FC(FF E0); D8-MoveAbsolute(20 00); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+RG A4CF:D8-MoveAbsolute(00 E8); D8-MoveAbsolute(18 E8); D8-MoveAbsolute(20 08); SetToBlock(04 20); FC(FF E0); CE-MoveAbsolute(28 20); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+LT A4E4:FC(00 01); D8-MoveAbsolute(E8 F8); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RT BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+
+
+Offense: 12
+
+QB A55C:TakeSnap; D8-MoveAbsolute(F0 D8); Handoff-HB; MoveRelative(00 C8); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A567:F3-Pause(14); D8-MoveAbsolute(F0 C0); D8-MoveAbsolute(F8 E0); D8-MoveAbsolute(04 F0); C8-Move(89 A5 09); C8-Move(8D A5 05); C8-Move(91 A5 02); C7-Move(95 A5); TakeControl; JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB A59D:D8-MoveAbsolute(D0 D8); F3-Pause(01); FaceDirection(60); SetToBlock(99 00); FC(FF E0); LoopBack FA// 
+WR1 A49D:JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+WR2 A5AC:D9-MoveAbsolute(C0 60); MoveRelative(E8 20); F4-Pause(01); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE A5B7:D8-MoveAbsolute(18 EC); D8-MoveAbsolute(18 CC); F3-Pause(01); FaceDirection(A0); SetToBlock(06 80); PassBlock; FC(FF E0); LoopBack F9// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT A5CA:D8-MoveAbsolute(0C EC); D8-MoveAbsolute(0C E0); F3-Pause(01); FaceDirection(A0); SetToBlock(66 00); FC(FF E0); PassBlock; JumpTo A5D4:SetToBlock(66 00); FC(FF E0); PassBlock; JumpTo A5D4:
+
+
+Offense: 13 Onesetback L 19,56 FB Offtackle L
+
+QB A615:TakeSnap; D8-MoveAbsolute(F0 E8); D8-MoveAbsolute(EC DC); Handoff-HB; D8-MoveAbsolute(EC B8); D8-MoveAbsolute(F0 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A626:F3-Pause(0A); D8-MoveAbsolute(EC D4); TakeControl; D8-MoveAbsolute(E0 E4); C8-Move(4B A6 09); C8-Move(4F A6 05); C8-Move(53 A6 02); C7-Move(57 A6); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(D0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB A65F:D8-MoveAbsolute(C4 F8); 26-JumpTo A668:F7(10); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+
+56,WR1 A49D:JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+19 WR1 B786:F7(10); MoveRelative(00 20); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC//
+
+WR2 A66D:D9-MoveAbsolute(C0 60); D9-MoveAbsolute(C0 10); F4-Pause(14); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+
+56,19 WR2 A8A2:D8-MoveAbsolute(38 48); FC(FF E0); D8-MoveAbsolute(D0 68); SetToBlock(01 E0); FC(FF E0); PassBlock; LoopBack F9// 
+
+TE A678:D8-MoveAbsolute(14 18); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+56,19 TE BE36:FC(FF E0); Block-LE; LoopBack FC//
+
+OC A67E:F3-Pause(06); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+LG A683:D8-MoveAbsolute(E4 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RG A689:D8-MoveAbsolute(FC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LT BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+RT A5CA:D8-MoveAbsolute(0C EC); D8-MoveAbsolute(0C E0); F3-Pause(01); FaceDirection(A0); SetToBlock(66 00); FC(FF E0); PassBlock; JumpTo A5D4:SetToBlock(66 00); FC(FF E0); PassBlock; JumpTo A5D4:
+19, RT BE48:FC(FF E0); Block-LILB; LoopBack FC//
+56, RT B832:F4-Pause(00); LoopBack FE// 
+
+
+
+
+
+
+
+
+
+Offense: 14 R and S Sweep L (Top)
+
+QB A6CD:TakeSnap; D8-MoveAbsolute(F0 E8); Pitch-HB; D8-MoveAbsolute(F0 D0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A6D8:F3-Pause(14); D8-MoveAbsolute(D0 C8); TakeControl; D8-MoveAbsolute(C4 D4); C8-Move(00 A7 09); C8-Move(04 A7 05); C8-Move(08 A7 02); C7-Move(0C A7); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(C0 E8); D8-MoveAbsolute(BC F0); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+
+WR1 B781:F7-Boost HP(10); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+52 WR1 BE54:FC(FF E0); Block-RCB; LoopBack FC//
+
+WR2 A714:D9-MoveAbsolute(C0 18); FC(FF E0); D8-MoveAbsolute(F8 50); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+
+TE A720:D8-MoveAbsolute(20 F8); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+51,52 TE B77B:MoveRelative(00 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+
+OC A67E:F3-Pause(06); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+LG A683:D8-MoveAbsolute(E4 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RG A689:D8-MoveAbsolute(FC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LT A726:D8-MoveAbsolute(D8 00); FC(FF E0); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+RT BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+
+
+
+
+Offense: 16
+
+QB AB3E:TakeSnap; D8-MoveAbsolute(F8 D4); Handoff-HB; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(F4 BC); D8-MoveAbsolute(E8 B4); D8-MoveAbsolute(D8 B0); D8-MoveAbsolute(C8 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB ABC9:F3-Pause(0D); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(00 D8); TakeControl; C8-Move(F1 AB 09); C8-Move(F5 AB 05); C8-Move(F9 AB 02); C7-Move(FD AB); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(08 EC); D8-MoveAbsolute(10 08); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AB55:D8-MoveAbsolute(C8 08); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+WR1 AACC:F7(10); D9-MoveAbsolute(36 10); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 BF2A:FC(FF E0); ChopBlock-SS; LoopBack FC// 
+TE AC05:D8-MoveAbsolute(14 E0); F3-Pause(08); D8-MoveAbsolute(20 EC); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+OC A786:F3-Pause(06); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LG BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RG BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT AC10:D8-MoveAbsolute(10 F8); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+
+
+Offense: 17
+
+QB A78B:TakeSnap; D8-MoveAbsolute(EC D4); Handoff-HB; D8-MoveAbsolute(F8 B8); D8-MoveAbsolute(00 B0); D8-MoveAbsolute(10 A8); D8-MoveAbsolute(20 A8); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A79F:F3-Pause(21); D8-MoveAbsolute(F0 C0); D8-MoveAbsolute(E8 D4); TakeControl; D8-MoveAbsolute(D0 E0); D8-MoveAbsolute(C8 E4); C8-Move(CD A7 09); C8-Move(D1 A7 05); C8-Move(D5 A7 02); C7-Move(D9 A7); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(C0 F0); D8-MoveAbsolute(B8 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB A7E1:D8-MoveAbsolute(C8 08); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+WR1 B786:F7(10); MoveRelative(00 20); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+WR2 A7F9:D9-MoveAbsolute(C0 60); D8-MoveAbsolute(F8 60); FC(FF E0); D8-MoveAbsolute(C0 60); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+TE A7E7:D8-MoveAbsolute(14 18); D8-MoveAbsolute(1C 1C); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A683:D8-MoveAbsolute(E4 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT A7F0:FC(10 00); D8-MoveAbsolute(DA F4); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 18
+
+QB A849:TakeSnap; D8-MoveAbsolute(F8 E0); D8-MoveAbsolute(F8 DC); Handoff-HB; D8-MoveAbsolute(F8 D0); D8-MoveAbsolute(E8 C0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A85A:D8-MoveAbsolute(FC C4); D8-MoveAbsolute(F8 E8); TakeControl; C8-Move(7A A8 09); C8-Move(7E A8 05); C8-Move(82 A8 02); C7-Move(86 A8); D8-MoveAbsolute(F8 10); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB A88E:E2(09); D8-MoveAbsolute(F0 E0); D8-MoveAbsolute(F8 F8); SetToBlock(11 E0); FC(FF E0); CE-MoveAbsolute(F8 48); PassBlock; LoopBack FF// 
+WR1 A39D:D9-MoveAbsolute(36 18); FC(FF E0); SetToBlock(06 60); CE-MoveAbsolute(F8 60); CD(08 D0); LoopBack FD// 
+WR2 A3AE:D9-MoveAbsolute(B0 F8); FC(FF E0); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+TE A3B7:F7(10); FC(19 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC A3BF:FC(40 00); D8-MoveAbsolute(EC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A3C8:FC(08 00); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG A3CE:FC(04 00); D8-MoveAbsolute(02 00); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT A3D7:FC(80 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT A3DD:FC(20 00); D8-MoveAbsolute(10 00); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+
+
+
+ 
+
+
+Offense: 1B
+
+QB A930:TakeSnap; D8-MoveAbsolute(F0 E0); Pitch-HB; D8-MoveAbsolute(F0 9C); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A93B:F3-Pause(1E); D8-MoveAbsolute(D8 C0); D8-MoveAbsolute(C0 D0); Fake-WR1; TakeControl; C8-Move(64 A9 09); C8-Move(68 A9 05); C8-Move(6C A9 02); C7-Move(70 A9); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(B8 E0); D8-MoveAbsolute(B8 08); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB A978:D8-MoveAbsolute(C8 00); D8-MoveAbsolute(C0 10); SetToBlock(09 40); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+WR1 A984:F3-Pause(3C); D9-MoveAbsolute(36 E8); D8-MoveAbsolute(C0 C8); D8-MoveAbsolute(D0 B8); D8-MoveAbsolute(E0 B0); D8-MoveAbsolute(08 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 A998:D9-MoveAbsolute(C0 38); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+TE BE8A:D8-MoveAbsolute(14 C4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(22 80); LoopForward 51; FC(FF E0); PassBlock; LoopBack FC// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 1C
+
+QB AA6A:TakeSnap; D8-MoveAbsolute(F8 D8); D8-MoveAbsolute(F8 D4); Handoff-HB; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(E8 B0); D8-MoveAbsolute(D8 B0); D8-MoveAbsolute(D0 B8); D8-MoveAbsolute(C8 D0); D8-MoveAbsolute(C8 08); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+HB AA87:F3-Pause(14); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(08 D4); TakeControl; C8-Move(B2 AA 09); C8-Move(B6 AA 05); C8-Move(BA AA 02); C7-Move(BE AA); D8-MoveAbsolute(28 E0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(30 F0); D8-MoveAbsolute(30 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AAC6:D8-MoveAbsolute(C8 20); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+WR1 AACC:F7(10); D9-MoveAbsolute(36 10); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 B78E:F7(10); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+TE BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 1D
+
+QB AB3E:TakeSnap; D8-MoveAbsolute(F8 D4); Handoff-HB; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(F4 BC); D8-MoveAbsolute(E8 B4); D8-MoveAbsolute(D8 B0); D8-MoveAbsolute(C8 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AA87:F3-Pause(14); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(08 D4); TakeControl; C8-Move(B2 AA 09); C8-Move(B6 AA 05); C8-Move(BA AA 02); C7-Move(BE AA); D8-MoveAbsolute(28 E0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(30 F0); D8-MoveAbsolute(30 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AB55:D8-MoveAbsolute(C8 08); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+WR1 AACC:F7(10); D9-MoveAbsolute(36 10); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 BF2A:FC(FF E0); ChopBlock-SS; LoopBack FC// 
+TE AB5B:FC(FF E0); D8-MoveAbsolute(14 E0); FaceDirection(80); F3-Pause(14); D8-MoveAbsolute(20 E8); D8-MoveAbsolute(28 00); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+OC A786:F3-Pause(06); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LG BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RG BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+
+
+Offense: 1E
+
+QB AC16:TakeSnap; D8-MoveAbsolute(F0 D8); Handoff-HB; D8-MoveAbsolute(F0 C0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AC21:D8-MoveAbsolute(F8 D4); TakeControl; C8-Move(44 AC 09); C8-Move(48 AC 05); C8-Move(4C AC 02); C7-Move(50 AC); D8-MoveAbsolute(0C E4); D8-MoveAbsolute(14 F4); D8-MoveAbsolute(18 08); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AC58:FC(02 00); D8-MoveAbsolute(0C D8); D8-MoveAbsolute(18 E8); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+WR1 A39D:D9-MoveAbsolute(36 18); FC(FF E0); SetToBlock(06 60); CE-MoveAbsolute(F8 60); CD(08 D0); LoopBack FD// 
+WR2 AC64:D8-MoveAbsolute(28 08); 27-JumpTo BF2A:FC(FF E0); ChopBlock-SS; LoopBack FC// JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 1F
+
+QB A43D:TakeSnap; D8-MoveAbsolute(F0 D0); Handoff-HB; D8-MoveAbsolute(E0 C0); D8-MoveAbsolute(C8 C0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A44B:F3-Pause(14); D8-MoveAbsolute(F0 C8); TakeControl; D8-MoveAbsolute(18 D0); C8-Move(73 A4 09); C8-Move(77 A4 05); C8-Move(7B A4 02); C7-Move(7F A4); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(28 E0); D8-MoveAbsolute(30 F8); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AC6D:D8-MoveAbsolute(18 D0); D8-MoveAbsolute(20 F0); SetToBlock(0D 60); FC(FF E0); CD(00 40); LoopBack F7// 
+WR1 A49D:JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+WR2 A4A0:D9-MoveAbsolute(C0 48); D9-MoveAbsolute(48 68); F4-Pause(50); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE A4AB:FC(80 00); D8-MoveAbsolute(DA F8); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+OC A4B4:FC(20 00); D8-MoveAbsolute(00 FA); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LG A4BD:D8-MoveAbsolute(E8 E4); D8-MoveAbsolute(10 E4); D8-MoveAbsolute(18 F0); FC(FF E0); D8-MoveAbsolute(20 00); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+RG A4CF:D8-MoveAbsolute(00 E8); D8-MoveAbsolute(18 E8); D8-MoveAbsolute(20 08); SetToBlock(04 20); FC(FF E0); CE-MoveAbsolute(28 20); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+LT A4E4:FC(00 01); D8-MoveAbsolute(E8 F8); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RT BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+
+
+ 
+
+
+Offense: 21
+
+QB ACF4:TakeSnap; D8-MoveAbsolute(F0 E0); D8-MoveAbsolute(F8 D0); Handoff-FB; D8-MoveAbsolute(00 C0); D8-MoveAbsolute(08 B8); D8-MoveAbsolute(18 B0); D8-MoveAbsolute(28 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AD0B:D8-MoveAbsolute(D4 D0); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(34 18); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB AD17:F3-Pause(19); D8-MoveAbsolute(04 C8); D8-MoveAbsolute(E8 C8); TakeControl; C8-Move(45 AD 09); C8-Move(49 AD 05); C8-Move(4D AD 02); C7-Move(51 AD); D8-MoveAbsolute(D8 D0); D8-MoveAbsolute(C8 E0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(C0 F0); D8-MoveAbsolute(C0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR1 B7C9:F7(10); D9-MoveAbsolute(36 28); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 A901:D9-MoveAbsolute(C0 48); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE AD5F:F7(10); D8-MoveAbsolute(D0 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG AD67:D8-MoveAbsolute(E4 E8); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 EE); D8-MoveAbsolute(C0 FC); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+RG AD76:D8-MoveAbsolute(F8 E4); D8-MoveAbsolute(D8 E4); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 F0); D8-MoveAbsolute(C4 F8); D8-MoveAbsolute(C4 00); SetToBlock(4C 20); FC(FF E0); CE-MoveAbsolute(C4 10); CE-MoveAbsolute(CC 20); CE-MoveAbsolute(E0 30); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT AD9A:D8-MoveAbsolute(00 00); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+
+
+Offense: 22
+
+QB ADFF:TakeSnap; D8-MoveAbsolute(F0 E8); Pitch-HB; D8-MoveAbsolute(F0 D0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AE0A:D8-MoveAbsolute(20 C4); TakeControl; C8-Move(30 AE 09); C8-Move(34 AE 05); C8-Move(38 AE 02); C7-Move(3C AE); D8-MoveAbsolute(28 CC); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(30 E0); D8-MoveAbsolute(30 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB AE44:D8-MoveAbsolute(D8 E0); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+WR1 A39D:D9-MoveAbsolute(36 18); FC(FF E0); SetToBlock(06 60); CE-MoveAbsolute(F8 60); CD(08 D0); LoopBack FD// 
+WR2 AE4A:D9-MoveAbsolute(C0 20); 2B-JumpTo BF2A:FC(FF E0); ChopBlock-SS; LoopBack FC// JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE AE53:FC(02 00); D8-MoveAbsolute(10 F8); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC A786:F3-Pause(06); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LG AE5C:D8-MoveAbsolute(E8 E4); D8-MoveAbsolute(10 E4); D8-MoveAbsolute(20 F0); D8-MoveAbsolute(28 00); SetToBlock(0C 40); FC(FF E0); CE-MoveAbsolute(28 10); CE-MoveAbsolute(10 30); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+RG AE77:D8-MoveAbsolute(FC E8); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(20 F0); FC(FF E0); D8-MoveAbsolute(20 04); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+LT AE89:D8-MoveAbsolute(E0 F8); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RT AE8F:D8-MoveAbsolute(00 00); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 23
+
+QB A930:TakeSnap; D8-MoveAbsolute(F0 E0); Pitch-HB; D8-MoveAbsolute(F0 9C); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A99E:F3-Pause(1E); D8-MoveAbsolute(D8 C0); D8-MoveAbsolute(C0 D0); Handoff-WR1; D8-MoveAbsolute(B8 E0); D8-MoveAbsolute(B8 08); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+FB A9B0:D8-MoveAbsolute(C8 00); D8-MoveAbsolute(C0 10); F3-Pause(0A); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+WR1 A9BB:F3-Pause(3C); D9-MoveAbsolute(36 E8); D8-MoveAbsolute(C0 C8); D8-MoveAbsolute(D0 B8); TakeControl; C8-Move(EC A9 09); C8-Move(F0 A9 05); C8-Move(F4 A9 02); C7-Move(F8 A9); D8-MoveAbsolute(E0 B0); D8-MoveAbsolute(08 B0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(18 B8); D8-MoveAbsolute(28 C8); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR2 AA00:D9-MoveAbsolute(C0 38); D9-MoveAbsolute(98 40); 27-JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// F7(10); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+TE AA0E:D8-MoveAbsolute(14 C4); F3-Pause(01); FaceDirection(A0); F3-Pause(1E); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT AA1A:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); F3-Pause(1E); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+
+
+Offense: 24
+
+QB AE95:TakeSnap; D8-MoveAbsolute(FC D8); Handoff-FB; D8-MoveAbsolute(00 C0); D8-MoveAbsolute(10 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AEA3:D8-MoveAbsolute(30 E8); D8-MoveAbsolute(30 28); SetToBlock(0D 40); FC(FF E0); CE-MoveAbsolute(E8 50); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB AEB5:F3-Pause(14); D8-MoveAbsolute(04 CC); D8-MoveAbsolute(E8 D8); TakeControl; C8-Move(DD AE 09); C8-Move(E1 AE 05); C8-Move(E5 AE 02); C7-Move(E9 AE); D8-MoveAbsolute(DC E8); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(D0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR1 B786:F7(10); MoveRelative(00 20); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+WR2 A65F:D8-MoveAbsolute(C4 F8); 26-JumpTo A668:F7(10); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+TE BE36:FC(FF E0); Block-LE; LoopBack FC// 
+OC A67E:F3-Pause(06); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+LG A683:D8-MoveAbsolute(E4 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RG A689:D8-MoveAbsolute(FC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LT BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+RT BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+
+
+Offense: 25
+
+QB AA6A:TakeSnap; D8-MoveAbsolute(F8 D8); D8-MoveAbsolute(F8 D4); Handoff-HB; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(E8 B0); D8-MoveAbsolute(D8 B0); D8-MoveAbsolute(D0 B8); D8-MoveAbsolute(C8 D0); D8-MoveAbsolute(C8 08); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+HB AAD4:F3-Pause(1E); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(08 D4); D8-MoveAbsolute(20 D8); Handoff-WR2; D8-MoveAbsolute(28 E0); D8-MoveAbsolute(30 F8); D8-MoveAbsolute(30 00); F3-Pause(64); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+FB AAEE:F3-Pause(1E); D8-MoveAbsolute(C8 18); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+WR1 AACC:F7(10); D9-MoveAbsolute(36 10); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 AAF6:F3-Pause(37); D8-MoveAbsolute(30 E0); D8-MoveAbsolute(18 CC); TakeControl; C8-Move(2A AB 09); C8-Move(2E AB 05); C8-Move(32 AB 02); C7-Move(36 AB); D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(E8 C8); D8-MoveAbsolute(D8 D0); D8-MoveAbsolute(C8 E0); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(C0 F0); D8-MoveAbsolute(C0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+TE BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 26
+
+QB ACF4:TakeSnap; D8-MoveAbsolute(F0 E0); D8-MoveAbsolute(F8 D0); Handoff-FB; D8-MoveAbsolute(00 C0); D8-MoveAbsolute(08 B8); D8-MoveAbsolute(18 B0); D8-MoveAbsolute(28 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB AD0B:D8-MoveAbsolute(D4 D0); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(34 18); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB AEF1:F3-Pause(1E); D8-MoveAbsolute(E8 D4); TakeControl; C8-Move(16 AF 09); C8-Move(1A AF 05); C8-Move(1E AF 02); C7-Move(22 AF); D8-MoveAbsolute(DC E4); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(D0 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR1 B7C9:F7(10); D9-MoveAbsolute(36 28); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 A901:D9-MoveAbsolute(C0 48); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE A65F:D8-MoveAbsolute(C4 F8); 26-JumpTo A668:F7(10); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC A67E:F3-Pause(06); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+LG A683:D8-MoveAbsolute(E4 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RG A689:D8-MoveAbsolute(FC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LT BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+RT BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+
+
+
+
+
+Offense: 28
+
+QB A3E6:TakeSnap; D8-MoveAbsolute(F8 E0); D8-MoveAbsolute(F8 DC); Handoff-FB; D8-MoveAbsolute(F8 DA); D8-MoveAbsolute(F0 D0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A3F7:D8-MoveAbsolute(E0 B0); D8-MoveAbsolute(F4 B0); D8-MoveAbsolute(2C D8); D8-MoveAbsolute(30 EC); D8-MoveAbsolute(30 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB A409:D8-MoveAbsolute(00 CC); D8-MoveAbsolute(F8 E8); TakeControl; C8-Move(29 A4 09); C8-Move(2D A4 05); C8-Move(31 A4 02); C7-Move(35 A4); D8-MoveAbsolute(F8 38); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR1 A39D:D9-MoveAbsolute(36 18); FC(FF E0); SetToBlock(06 60); CE-MoveAbsolute(F8 60); CD(08 D0); LoopBack FD// 
+WR2 A3AE:D9-MoveAbsolute(B0 F8); FC(FF E0); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+TE A3B7:F7(10); FC(19 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC A3BF:FC(40 00); D8-MoveAbsolute(EC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A3C8:FC(08 00); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG A3CE:FC(04 00); D8-MoveAbsolute(02 00); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT A3D7:FC(80 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT A3DD:FC(20 00); D8-MoveAbsolute(10 00); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+Offense: 2D
+
+QB B17B:ShotgunTakeSnap; TakeControl; C8-Move(A5 B1 09); C8-Move(A9 B1 05); C8-Move(AD B1 02); C7-Move(B1 B1); D8-MoveAbsolute(E0 BC); D8-MoveAbsolute(CC C8); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(C0 D8); D8-MoveAbsolute(BC E8); D8-MoveAbsolute(BC 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+HB B1B9:D8-MoveAbsolute(08 D0); F3-Pause(01); FaceDirection(80); SetToBlock(20 00); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+WR1 B7DD:F7(10); JumpTo AD5F:F7(10); D8-MoveAbsolute(D0 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+WR2 B076:27-JumpTo B07B:D9-MoveAbsolute(C0 28); D8-MoveAbsolute(F0 50); SetToBlock(FF E0); CE-MoveAbsolute(E0 40); CE-MoveAbsolute(E0 68); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// F7(10); D9-MoveAbsolute(C0 28); D8-MoveAbsolute(F0 50); SetToBlock(FF E0); CE-MoveAbsolute(E0 40); CE-MoveAbsolute(E0 68); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+TE B1C6:D8-MoveAbsolute(10 E8); F3-Pause(0A); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG AD67:D8-MoveAbsolute(E4 E8); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 EE); D8-MoveAbsolute(C0 FC); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+RG B1CE:D8-MoveAbsolute(F8 E4); D8-MoveAbsolute(D8 E4); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 F0); D8-MoveAbsolute(C4 F8); D8-MoveAbsolute(C4 00); SetToBlock(44 60); FC(FF E0); CE-MoveAbsolute(C4 10); CE-MoveAbsolute(CC 20); CE-MoveAbsolute(E0 30); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT B1F2:D8-MoveAbsolute(04 E0); D8-MoveAbsolute(E4 E0); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+
+
+Offense: 2E
+
+QB B128:TakeSnap; DropBack(00 F8); C8-Move(49 B1 09); C8-Move(4D B1 05); C8-Move(51 B1 02); C7-Move(55 B1); D8-MoveAbsolute(FA E4); TakeControl; D8-MoveAbsolute(FA 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+HB B832:F4-Pause(00); LoopBack FE// 
+FB B15D:27-JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR1 BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+WR2 BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+TE B163:27-JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG B16F:D8-MoveAbsolute(04 F8); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+
+
+Offense: 2F
+
+QB B1FB:TakeSnap; D8-MoveAbsolute(F0 E0); D8-MoveAbsolute(F8 D0); Handoff-FB; D8-MoveAbsolute(00 C0); D8-MoveAbsolute(08 B8); D8-MoveAbsolute(18 B0); D8-MoveAbsolute(28 B0); D8-MoveAbsolute(30 B8); D8-MoveAbsolute(38 C8); D8-MoveAbsolute(38 00); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+HB B21B:D8-MoveAbsolute(D4 D0); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(34 18); SetToBlock(FF E0); CE-MoveAbsolute(20 30); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB B22D:F3-Pause(19); D8-MoveAbsolute(04 C8); D8-MoveAbsolute(E8 C8); D8-MoveAbsolute(D8 D0); D8-MoveAbsolute(C8 E0); Pitch-WR1; D8-MoveAbsolute(C0 F0); D8-MoveAbsolute(C0 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 B245:F3-Pause(64); D8-MoveAbsolute(B8 D8); D8-MoveAbsolute(D0 C0); C8-Move(73 B2 09); C8-Move(77 B2 05); C8-Move(7B B2 02); C7-Move(7F B2); D8-MoveAbsolute(E8 B8); D8-MoveAbsolute(F8 B8); TakeControl; D8-MoveAbsolute(08 B8); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(18 C0); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR2 A901:D9-MoveAbsolute(C0 48); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE AD5F:F7(10); D8-MoveAbsolute(D0 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG AD67:D8-MoveAbsolute(E4 E8); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 EE); D8-MoveAbsolute(C0 FC); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+RG AD76:D8-MoveAbsolute(F8 E4); D8-MoveAbsolute(D8 E4); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 F0); D8-MoveAbsolute(C4 F8); D8-MoveAbsolute(C4 00); SetToBlock(4C 20); FC(FF E0); CE-MoveAbsolute(C4 10); CE-MoveAbsolute(CC 20); CE-MoveAbsolute(E0 30); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT AD9A:D8-MoveAbsolute(00 00); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+
+
+Offense: 30
+
+QB A4ED:TakeSnap; D8-MoveAbsolute(F0 D0); Fake-HB; D8-MoveAbsolute(E0 C0); D8-MoveAbsolute(D8 C0); TakeControl; D8-MoveAbsolute(C8 C0); FaceDirection(80); 27-JumpTo A517:C1(19 2D FD); D8-MoveAbsolute(B8 D8); 27-JumpTo A508:92-Pass(42 64 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// E2(03); E3(03); D8-MoveAbsolute(B8 F0); C1(3C 41 FD); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack D9; 92-Pass(42 64 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(11 A5); C1(3C 50 7F); 92-Pass(42 64 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A531:F3-Pause(14); D8-MoveAbsolute(F0 C8); D8-MoveAbsolute(18 D0); D8-MoveAbsolute(28 E0); D8-MoveAbsolute(30 F8); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB A542:Route#1; D8-MoveAbsolute(0C D0); D8-MoveAbsolute(E0 E0); D9-MoveAbsolute(40 20); D9-MoveAbsolute(40 28); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 B83C:Route#3; MoveRelative(00 40); LoopBack FD// 
+WR2 A552:Route#2; D9-MoveAbsolute(C0 48); D9-MoveAbsolute(68 68); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE A4AB:FC(80 00); D8-MoveAbsolute(DA F8); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+OC A4B4:FC(20 00); D8-MoveAbsolute(00 FA); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LG A4BD:D8-MoveAbsolute(E8 E4); D8-MoveAbsolute(10 E4); D8-MoveAbsolute(18 F0); FC(FF E0); D8-MoveAbsolute(20 00); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+RG A4CF:D8-MoveAbsolute(00 E8); D8-MoveAbsolute(18 E8); D8-MoveAbsolute(20 08); SetToBlock(04 20); FC(FF E0); CE-MoveAbsolute(28 20); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+LT A4E4:FC(00 01); D8-MoveAbsolute(E8 F8); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RT BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+
+
+Offense: 31
+
+QB B287:TakeSnap; DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); 2C-JumpTo B2AC:C1(23 2D FD); E2(04); E3(04); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(1A F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DE; 94-Pass(31 25 44 32 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(A6 B2); C1(1E C8 B3); 94-Pass(31 25 44 32 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B962:Route#2; D8-MoveAbsolute(E8 C8); D8-MoveAbsolute(E0 F0); F5-Pause(08 32); D8-MoveAbsolute(D0 00); D8-MoveAbsolute(C8 10); D8-MoveAbsolute(C0 28); D8-MoveAbsolute(C0 38); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB B97B:Route#3; F3-Pause(0A); D8-MoveAbsolute(C4 10); D8-MoveAbsolute(FC 30); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 B987:Route#1; D9-MoveAbsolute(36 28); D9-MoveAbsolute(3C 30); D9-MoveAbsolute(36 38); MoveRelative(00 40); LoopBack FD// 
+WR2 B996:Route#4; D8-MoveAbsolute(20 08); D8-MoveAbsolute(14 18); D8-MoveAbsolute(12 28); MoveRelative(00 40); JumpTo B9A0:MoveRelative(00 40); JumpTo B9A0:
+TE B9A6:Route#5; F3-Pause(28); D8-MoveAbsolute(1C F8); D8-MoveAbsolute(20 00); D8-MoveAbsolute(38 18); D9-MoveAbsolute(C4 38); D9-MoveAbsolute(C4 78); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG ACDB:D8-MoveAbsolute(D8 E0); F3-Pause(01); FaceDirection(80); SetToBlock(D8 00); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 32
+
+QB ADA0:TakeSnap; D8-MoveAbsolute(F0 E0); D8-MoveAbsolute(F8 D0); Fake-FB; D8-MoveAbsolute(00 C0); D8-MoveAbsolute(08 B8); D8-MoveAbsolute(18 B0); TakeControl; D8-MoveAbsolute(28 B0); FaceDirection(80); 2B-JumpTo ADD0:C1(19 2D FD); D8-MoveAbsolute(34 C8); 27-JumpTo ADC1:92-Pass(51 54 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// E2(03); E3(03); D8-MoveAbsolute(34 F0); C1(3C 41 FD); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack D9; 92-Pass(51 54 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(CA AD); C1(28 64 7F); 92-Pass(51 54 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B8E9:Route#3; D8-MoveAbsolute(D4 D0); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(34 18); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB ADEA:F3-Pause(19); D8-MoveAbsolute(04 C8); D8-MoveAbsolute(E8 C8); D8-MoveAbsolute(D8 D0); F3-Pause(01); FaceDirection(60); SetToBlock(D9 00); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+WR1 B872:Route#1; MoveRelative(00 6C); MoveRelative(2C 30); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 B8F6:Route#2; MoveRelative(00 1C); MoveRelative(F0 40); MoveRelative(EC 18); MoveRelative(00 08); MoveRelative(04 04); MoveRelative(08 00); MoveRelative(08 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE AD5F:F7(10); D8-MoveAbsolute(D0 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG AD67:D8-MoveAbsolute(E4 E8); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 EE); D8-MoveAbsolute(C0 FC); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+RG AD76:D8-MoveAbsolute(F8 E4); D8-MoveAbsolute(D8 E4); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 F0); D8-MoveAbsolute(C4 F8); D8-MoveAbsolute(C4 00); SetToBlock(4C 20); FC(FF E0); CE-MoveAbsolute(C4 10); CE-MoveAbsolute(CC 20); CE-MoveAbsolute(E0 30); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT AD9A:D8-MoveAbsolute(00 00); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+
+
+Offense: 33
+
+QB A808:TakeSnap; D8-MoveAbsolute(EC D4); Fake-HB; D8-MoveAbsolute(F8 B8); D8-MoveAbsolute(00 B0); D8-MoveAbsolute(10 A8); TakeControl; D8-MoveAbsolute(20 A8); FaceDirection(80); 27-JumpTo A836:E2(04); E3(04); D8-MoveAbsolute(30 C8); 27-JumpTo A826:93-Pass(45 31 43 F4) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// D8-MoveAbsolute(30 F0); C1(3C 41 FD); LoopBack DF; 93-Pass(45 31 43 F4) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(30 A8); C1(0A 46 7F); 93-Pass(45 31 43 F4) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B85A:Route#3; F3-Pause(21); D8-MoveAbsolute(F0 C0); D8-MoveAbsolute(E8 D4); D8-MoveAbsolute(D0 E0); D8-MoveAbsolute(C8 E4); D8-MoveAbsolute(C0 F0); D8-MoveAbsolute(B8 00); JumpTo BF5D:MoveRelative(00 50); LoopBack FD// 
+FB A7E1:D8-MoveAbsolute(C8 08); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+WR1 BD92:Route#4; MoveRelative(00 4C); MoveRelative(40 38); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 B87C:Route#1; MoveRelative(00 6C); MoveRelative(00 50); MoveRelative(00 50); MoveRelative(00 50); MoveRelative(D0 70); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE B88F:Route#2; F3-Pause(3C); D8-MoveAbsolute(14 18); D8-MoveAbsolute(30 38); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A683:D8-MoveAbsolute(E4 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT A7F0:FC(10 00); D8-MoveAbsolute(DA F4); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 34
+
+QB AB6E:TakeSnap; D8-MoveAbsolute(F8 D4); Fake-HB; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(F4 BC); D8-MoveAbsolute(E8 B4); D8-MoveAbsolute(D8 B0); TakeControl; D8-MoveAbsolute(C8 B0); FaceDirection(80); 27-JumpTo AB9F:E2(04); E3(04); D8-MoveAbsolute(B8 C8); D8-MoveAbsolute(B8 D8); 27-JumpTo AB8F:93-Pass(32 35 44 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// D8-MoveAbsolute(B8 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DD; 93-Pass(32 35 44 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(99 AB); C1(23 82 7F); 93-Pass(32 35 44 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB ABB4:F3-Pause(14); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(08 D4); D8-MoveAbsolute(18 D8); F3-Pause(01); FaceDirection(A0); SetToBlock(26 A0); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB B8C8:Route#1; MoveRelative(00 38); MoveRelative(F0 08); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BD9C:Route#4; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+WR2 B8DC:Route#3; MoveRelative(00 70); D8-MoveAbsolute(E8 7F); MoveRelative(00 10); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE B8D2:Route#2; D8-MoveAbsolute(14 20); D8-MoveAbsolute(D8 48); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC A786:F3-Pause(06); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LG BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RG BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+
+
+Offense: 35
+
+QB B2BF:TakeSnap; D8-MoveAbsolute(F8 E0); D8-MoveAbsolute(F8 DC); Fake-FB; D8-MoveAbsolute(F8 DA); D8-MoveAbsolute(F0 D0); D8-MoveAbsolute(F0 C8); TakeControl; D8-MoveAbsolute(F0 C0); F3-Pause(01); FaceDirection(80); C7-Move(E9 B2); C1(0A BE 7F); 93-Pass(32 21 54 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B9D7:Route#4; D8-MoveAbsolute(E0 B0); D8-MoveAbsolute(F4 B0); D8-MoveAbsolute(10 B6); D8-MoveAbsolute(24 C8); D8-MoveAbsolute(2C D8); D8-MoveAbsolute(30 EC); D8-MoveAbsolute(30 20); D8-MoveAbsolute(30 78); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB B9BB:D8-MoveAbsolute(00 CC); D8-MoveAbsolute(F8 E8); D8-MoveAbsolute(F8 00); Route#3; D8-MoveAbsolute(F8 50); D8-MoveAbsolute(F4 54); D8-MoveAbsolute(F0 54); D8-MoveAbsolute(EC 50); D8-MoveAbsolute(EC 48); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BDDE:Route#2; MoveRelative(00 64); MoveRelative(24 38); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+TE A3B7:F7(10); FC(19 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC A3BF:FC(40 00); D8-MoveAbsolute(EC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A3C8:FC(08 00); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG A3CE:FC(04 00); D8-MoveAbsolute(02 00); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT A3D7:FC(80 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT A3DD:FC(20 00); D8-MoveAbsolute(10 00); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 36
+
+QB B2EF:TakeSnap; DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); 2C-JumpTo B313:C1(23 2D FD); E2(04); E3(04); 27-JumpTo B326:D8-MoveAbsolute(CC F0); LoopBack F8; 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DF; 93-Pass(31 35 44 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// D8-MoveAbsolute(16 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DF; 93-Pass(31 35 44 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(0D B3); C1(41 8C 7F); 93-Pass(31 35 44 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B9F3:Route#1; F5-Pause(3C 50); D8-MoveAbsolute(C8 C0); D8-MoveAbsolute(B8 C8); D8-MoveAbsolute(B4 D8); 2C-JumpTo B832:F4-Pause(00); LoopBack FE// F4-Pause(3C); D8-MoveAbsolute(B4 30); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BE7B:F3-Pause(19); D8-MoveAbsolute(F8 CC); F3-Pause(01); FaceDirection(80); SetToBlock(FF E0); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+WR1 BDA4:Route#2; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+WR2 BA0B:Route#4; MoveRelative(00 5C); MoveRelative(00 18); MoveRelative(FE 02); MoveRelative(FE 00); MoveRelative(FE FE); MoveRelative(00 FE); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BA21:Route#3; D8-MoveAbsolute(CC 20); D8-MoveAbsolute(F0 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 37
+
+QB B0C2:TakeSnap; D8-MoveAbsolute(F6 E4); D8-MoveAbsolute(F6 E0); Fake-FB; D8-MoveAbsolute(F6 C0); TakeControl; D8-MoveAbsolute(F6 B8); F3-Pause(01); FaceDirection(80); C7-Move(E5 B0); C1(28 64 7F); 92-Pass(54 42 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B08D:D8-MoveAbsolute(00 E0); D8-MoveAbsolute(F8 F8); FC(FF E0); D8-MoveAbsolute(F8 24); SetToBlock(FF E0); CE-MoveAbsolute(F8 48); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB B936:Route#2; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(F8 08); D8-MoveAbsolute(F8 40); MoveRelative(FC 04); MoveRelative(FC 00); MoveRelative(04 FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+WR2 B94F:Route#3; D9-MoveAbsolute(C0 68); MoveRelative(FC 04); MoveRelative(FC 00); MoveRelative(04 FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE AFD8:FC(02 00); D8-MoveAbsolute(18 FC); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC A3BF:FC(40 00); D8-MoveAbsolute(EC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A3C8:FC(08 00); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG A3CE:FC(04 00); D8-MoveAbsolute(02 00); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT A3D7:FC(80 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT A3DD:FC(20 00); D8-MoveAbsolute(10 00); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 38
+
+QB B7FF:TakeSnap; D8-MoveAbsolute(F0 E8); D8-MoveAbsolute(EC DC); Fake-HB; D8-MoveAbsolute(EC B8); TakeControl; D8-MoveAbsolute(F0 B0); FaceDirection(80); C7-Move(20 B8); C1(01 64 7F); 92-Pass(84 53 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A6B8:Route#3; F3-Pause(05); D8-MoveAbsolute(EC D4); D8-MoveAbsolute(E0 E4); D8-MoveAbsolute(D0 00); D8-MoveAbsolute(C0 50); MoveRelative(00 30); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+FB A65F:D8-MoveAbsolute(C4 F8); 26-JumpTo A668:F7(10); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+WR1 B89B:Route#2; MoveRelative(00 5C); MoveRelative(4C 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 B87C:Route#1; MoveRelative(00 6C); MoveRelative(00 50); MoveRelative(00 50); MoveRelative(00 50); MoveRelative(D0 70); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BE36:FC(FF E0); Block-LE; LoopBack FC// 
+OC A67E:F3-Pause(06); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+LG A683:D8-MoveAbsolute(E4 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RG A689:D8-MoveAbsolute(FC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LT BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+RT BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+
+
+Offense: 39
+
+QB A5DE:TakeSnap; D8-MoveAbsolute(F0 D8); Handoff-HB; D8-MoveAbsolute(F0 BC); F4-Pause(28); TakeControl; C7-Move(F8 A5); C1(01 78 7F); 91-Pass(73 F4) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A5FE:F3-Pause(14); D8-MoveAbsolute(F0 D0); D8-MoveAbsolute(00 E0); D8-MoveAbsolute(04 F0); Pitch-QB; FaceDirection(80); SetToBlock(66 00); FC(FF E0); PassBlock; LoopBack F9// 
+FB A59D:D8-MoveAbsolute(D0 D8); F3-Pause(01); FaceDirection(60); SetToBlock(99 00); FC(FF E0); LoopBack FA// 
+WR1 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+WR2 B846:Route#2; MoveRelative(00 6C); MoveRelative(E8 20); JumpTo BF5D:MoveRelative(00 50); LoopBack FD// 
+TE A5B7:D8-MoveAbsolute(18 EC); D8-MoveAbsolute(18 CC); F3-Pause(01); FaceDirection(A0); SetToBlock(06 80); PassBlock; FC(FF E0); LoopBack F9// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT A5CA:D8-MoveAbsolute(0C EC); D8-MoveAbsolute(0C E0); F3-Pause(01); FaceDirection(A0); SetToBlock(66 00); FC(FF E0); PassBlock; JumpTo A5D4:SetToBlock(66 00); FC(FF E0); PassBlock; JumpTo A5D4:
+
+
+Offense: 3A
+
+QB B32B:ShotgunTakeSnap; FaceDirection(80); TakeControl; 2C-JumpTo B351:C1(2D 37 FD); E2(03); E3(03); D8-MoveAbsolute(E6 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// F3-Pause(1E); LoopBack D8; 27-JumpTo B340:94-Pass(35 34 33 32 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C1(5A 96 CC); 94-Pass(35 34 33 32 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(4B B3); C1(5A 5F 7F); 27-JumpTo B340:94-Pass(35 34 33 32 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C1(5A 96 CC); 94-Pass(35 34 33 32 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BDA8:Route#5; F5-Pause(3C 50); D8-MoveAbsolute(C8 C0); D8-MoveAbsolute(B8 C8); D8-MoveAbsolute(B4 D8); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BA2B:Route#2; D8-MoveAbsolute(C0 30); MoveRelative(04 04); MoveRelative(04 00); MoveRelative(04 FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BA51:Route#1; MoveRelative(00 40); MoveRelative(00 4C); MoveRelative(04 04); MoveRelative(04 00); MoveRelative(04 FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BA67:Route#4; MoveRelative(00 40); MoveRelative(00 4C); MoveRelative(FC 04); MoveRelative(FC 00); MoveRelative(FC FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BA3E:Route#3; D8-MoveAbsolute(20 30); MoveRelative(FC 04); MoveRelative(FC 00); MoveRelative(FC FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 3B
+
+QB B363:TakeSnap; DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); 2C-JumpTo B387:C1(23 2D FD); E2(04); E3(04); 27-JumpTo B39A:D8-MoveAbsolute(CC F0); LoopBack F8; 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DF; 93-Pass(32 35 54 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// D8-MoveAbsolute(16 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DF; 93-Pass(32 35 54 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(81 B3); C1(50 AA 7F); 93-Pass(32 35 54 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BE6C:F3-Pause(19); D8-MoveAbsolute(E8 D0); F3-Pause(01); FaceDirection(80); SetToBlock(FF E0); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB B83C:Route#3; MoveRelative(00 40); LoopBack FD// 
+WR1 BDB8:Route#2; D9-MoveAbsolute(36 50); MoveRelative(08 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+TE BA7D:Route#4; D8-MoveAbsolute(1C 50); MoveRelative(08 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 3C
+
+QB B39F:TakeSnap; DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); C7-Move(BB B3); C1(3C 8C 7F); 94-Pass(23 22 44 35 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BDC2:Route#4; JumpTo B9F4:F5-Pause(3C 50); D8-MoveAbsolute(C8 C0); D8-MoveAbsolute(B8 C8); D8-MoveAbsolute(B4 D8); 2C-JumpTo B832:F4-Pause(00); LoopBack FE// F4-Pause(3C); D8-MoveAbsolute(B4 30); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BA87:Route#5; D8-MoveAbsolute(28 D0); D9-MoveAbsolute(C0 E4); MoveRelative(04 FC); MoveRelative(00 FC); MoveRelative(FC FC); MoveRelative(FC 00); 27-JumpTo B832:F4-Pause(00); LoopBack FE// F4-Pause(50); D9-MoveAbsolute(C0 00); D9-MoveAbsolute(C0 60); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BAA8:Route#1; MoveRelative(00 60); MoveRelative(00 70); MoveRelative(1C 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BAB5:Route#3; MoveRelative(E8 44); MoveRelative(00 50); MoveRelative(0C 7F); MoveRelative(00 40); LoopBack FD// 
+TE BDC6:Route#2; JumpTo BA22:D8-MoveAbsolute(CC 20); D8-MoveAbsolute(F0 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 3D
+
+QB B3C1:TakeSnap; DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); 2C-JumpTo B3E5:C1(19 1E FD); E2(04); E3(04); D8-MoveAbsolute(F9 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack E2; 93-Pass(32 31 53 F4) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(DF B3); C1(5A 8C 99); 93-Pass(32 31 53 F4) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BAC4:Route#3; D8-MoveAbsolute(10 DC); D8-MoveAbsolute(18 F0); D8-MoveAbsolute(18 10); D8-MoveAbsolute(18 10); D8-MoveAbsolute(10 20); D8-MoveAbsolute(F8 38); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BADA:Route#4; D8-MoveAbsolute(20 C0); D8-MoveAbsolute(30 D0); D9-MoveAbsolute(C0 00); F4-Pause(0A); D9-MoveAbsolute(C0 28); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BDCA:Route#2; JumpTo BA52:MoveRelative(00 40); MoveRelative(00 4C); MoveRelative(04 04); MoveRelative(04 00); MoveRelative(04 FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+TE BE8A:D8-MoveAbsolute(14 C4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(22 80); LoopForward 51; FC(FF E0); PassBlock; LoopBack FC// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 3E
+
+QB B3F5:TakeSnap; DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); 2D-JumpTo B419:C1(19 23 FD); E2(04); E3(04); D8-MoveAbsolute(16 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack E2; 93-Pass(34 31 42 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(13 B4); C1(82 AA 99); 93-Pass(34 31 42 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BAEC:Route#4; D8-MoveAbsolute(18 D0); D8-MoveAbsolute(18 08); D8-MoveAbsolute(10 10); D8-MoveAbsolute(00 18); D8-MoveAbsolute(FC 20); D8-MoveAbsolute(FC 24); D8-MoveAbsolute(00 29); D8-MoveAbsolute(20 34); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BB08:Route#3; D9-MoveAbsolute(B0 10); MoveRelative(00 40); LoopBack FD// 
+WR1 BB11:Route#1; D8-MoveAbsolute(C0 30); D8-MoveAbsolute(C0 60); MoveRelative(F8 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BB1E:Route#2; MoveRelative(00 18); MoveRelative(F0 38); D9-MoveAbsolute(68 48); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE B429:D8-MoveAbsolute(CC C4); F3-Pause(01); FaceDirection(60); SetToBlock(99 00); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 3F
+
+QB B436:TakeSnap; DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); 2C-JumpTo B459:C1(23 2D FD); E2(04); E3(04); 27-JumpTo B46C:D8-MoveAbsolute(CC F0); LoopBack F8; 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack E0; 92-Pass(32 54 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// D8-MoveAbsolute(16 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack E0; 92-Pass(32 54 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(53 B4); C1(2D 8C 7F); 92-Pass(32 54 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BE6C:F3-Pause(19); D8-MoveAbsolute(E8 D0); F3-Pause(01); FaceDirection(80); SetToBlock(FF E0); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB BB2B:Route#3; D8-MoveAbsolute(C8 20); D8-MoveAbsolute(E8 38); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BDCA:Route#2; JumpTo BA52:MoveRelative(00 40); MoveRelative(00 4C); MoveRelative(04 04); MoveRelative(04 00); MoveRelative(04 FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BB35:Route#1; D9-MoveAbsolute(C0 60); MoveRelative(E0 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BE8A:D8-MoveAbsolute(14 C4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(22 80); LoopForward 51; FC(FF E0); PassBlock; LoopBack FC// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 40
+
+QB B471:TakeSnap; D8-MoveAbsolute(F0 D0); Handoff-HB; D8-MoveAbsolute(F0 B8); FaceDirection(A0); F3-Pause(3C); TakeControl; F3-Pause(01); FaceDirection(80); C7-Move(92 B4); C1(1E 64 7F); 92-Pass(73 32 F4) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B498:F3-Pause(14); D8-MoveAbsolute(F0 C8); D8-MoveAbsolute(18 D0); D8-MoveAbsolute(20 D8); Pitch-QB; FaceDirection(80); SetToBlock(FF E0); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB BB3F:Route#2; D8-MoveAbsolute(0C D0); D8-MoveAbsolute(E0 E0); D8-MoveAbsolute(B8 20); 27-JumpTo B832:F4-Pause(00); LoopBack FE// F4-Pause(50); D8-MoveAbsolute(B8 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BAA8:Route#1; MoveRelative(00 60); MoveRelative(00 70); MoveRelative(1C 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 B92C:Route#3; MoveRelative(00 6C); MoveRelative(D8 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE A4AB:FC(80 00); D8-MoveAbsolute(DA F8); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+OC A4B4:FC(20 00); D8-MoveAbsolute(00 FA); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LG A4BD:D8-MoveAbsolute(E8 E4); D8-MoveAbsolute(10 E4); D8-MoveAbsolute(18 F0); FC(FF E0); D8-MoveAbsolute(20 00); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+RG A4CF:D8-MoveAbsolute(00 E8); D8-MoveAbsolute(18 E8); D8-MoveAbsolute(20 08); SetToBlock(04 20); FC(FF E0); CE-MoveAbsolute(28 20); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+LT A4E4:FC(00 01); D8-MoveAbsolute(E8 F8); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RT BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+
+
+Offense: 41
+
+QB A68F:TakeSnap; D8-MoveAbsolute(F0 E8); D8-MoveAbsolute(EC DC); Fake-HB; D8-MoveAbsolute(EC B8); TakeControl; D8-MoveAbsolute(F0 B0); FaceDirection(80); C7-Move(B1 A6); C1(14 78 7F); 93-Pass(54 53 21 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A6B8:Route#3; F3-Pause(05); D8-MoveAbsolute(EC D4); D8-MoveAbsolute(E0 E4); D8-MoveAbsolute(D0 00); D8-MoveAbsolute(C0 50); MoveRelative(00 30); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+FB A65F:D8-MoveAbsolute(C4 F8); 26-JumpTo A668:F7(10); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+WR1 BDA4:Route#2; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+WR2 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+TE B850:Route#4; MoveRelative(00 4C); MoveRelative(EC 20); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC A67E:F3-Pause(06); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+LG A683:D8-MoveAbsolute(E4 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RG A689:D8-MoveAbsolute(FC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LT BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+RT A5CA:D8-MoveAbsolute(0C EC); D8-MoveAbsolute(0C E0); F3-Pause(01); FaceDirection(A0); SetToBlock(66 00); FC(FF E0); PassBlock; JumpTo A5D4:SetToBlock(66 00); FC(FF E0); PassBlock; JumpTo A5D4:
+
+
+Offense: 42
+
+QB B4AC:ShotgunTakeSnap; DropBack(00 F8); TakeControl; FaceDirection(80); 2C-JumpTo B4DD:C1(23 2D FD); E2(04); E3(04); 27-JumpTo B4F0:D8-MoveAbsolute(CE F0); LoopBack F8; 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack CF; 27-JumpTo B4C8:C1(28 5A B3); 94-Pass(24 31 32 33 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 91-Pass(F4 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// D8-MoveAbsolute(14 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack CF; 27-JumpTo B4C8:C1(28 5A B3); 94-Pass(24 31 32 33 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 91-Pass(F4 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(D7 B4); C1(36 39 7F); 27-JumpTo B4C8:C1(28 5A B3); 94-Pass(24 31 32 33 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 91-Pass(F4 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BB54:Route#5; F3-Pause(1E); D8-MoveAbsolute(C8 D0); D8-MoveAbsolute(BC E0); D8-MoveAbsolute(B8 F8); MoveRelative(00 7F); MoveRelative(00 08); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BB69:Route#4; D8-MoveAbsolute(C0 28); MoveRelative(FC 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 B83C:Route#3; MoveRelative(00 40); LoopBack FD// 
+WR2 BB73:Route#1; D8-MoveAbsolute(20 40); D8-MoveAbsolute(08 50); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BDA4:Route#2; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 43
+
+QB B4F5:TakeSnap; DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); 2C-JumpTo B519:C1(0F 19 FD); E2(04); E3(04); 27-JumpTo B52C:D8-MoveAbsolute(CC F0); LoopBack F8; 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DF; 93-Pass(53 54 22 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// D8-MoveAbsolute(FA F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DF; 93-Pass(53 54 22 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(13 B5); C1(28 C8 99); 93-Pass(53 54 22 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B531:D8-MoveAbsolute(FC D0); FaceDirection(A0); SetToBlock(FF E0); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB BB7D:Route#2; D8-MoveAbsolute(18 10); D8-MoveAbsolute(14 20); D8-MoveAbsolute(10 24); D8-MoveAbsolute(08 28); D8-MoveAbsolute(00 28); D8-MoveAbsolute(F0 30); D8-MoveAbsolute(E8 40); D8-MoveAbsolute(E4 50); MoveRelative(00 40); LoopBack FD// 
+WR1 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+WR2 BD9C:Route#4; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+TE BB9B:Route#3; D9-MoveAbsolute(B2 50); D8-MoveAbsolute(F8 50); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 44
+
+QB AFE1:TakeSnap; D8-MoveAbsolute(F6 E4); D8-MoveAbsolute(F6 E0); Fake-HB; D8-MoveAbsolute(F6 B8); F3-Pause(01); FaceDirection(80); TakeControl; C7-Move(02 B0); C1(3C 6E 7F); 93-Pass(53 34 41 F2) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B90F:Route#3; MoveRelative(08 10); MoveRelative(00 30); JumpTo B83C:Route#3; MoveRelative(00 40); LoopBack FD// 
+FB B919:Route#2; MoveRelative(00 50); MoveRelative(04 04); MoveRelative(04 00); MoveRelative(04 FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+WR2 BDCE:Route#4; JumpTo B92D:MoveRelative(00 6C); MoveRelative(D8 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE AFD8:FC(02 00); D8-MoveAbsolute(18 FC); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC A3BF:FC(40 00); D8-MoveAbsolute(EC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A3C8:FC(08 00); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG A3CE:FC(04 00); D8-MoveAbsolute(02 00); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT A3D7:FC(80 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT A3DD:FC(20 00); D8-MoveAbsolute(10 00); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offense: 45
+
+QB B53C:TakeSnap; D8-MoveAbsolute(F8 D4); Handoff-HB; Boost-RS(07); Boost-MS(07); D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(FC B8); F3-Pause(01); FaceDirection(80); F4-Pause(5A); Boost-MS(00); TakeControl; F3-Pause(01); FaceDirection(80); C7-Move(68 B5); C1(3C 64 7F); 92-Pass(74 53 F2) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B56E:F3-Pause(14); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(08 D4); D8-MoveAbsolute(28 E0); Pitch-QB; FaceDirection(A0); SetToBlock(EE A0); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB BBA5:Route#2; D8-MoveAbsolute(C8 28); MoveRelative(F8 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BBAF:Route#3; D9-MoveAbsolute(36 60); D8-MoveAbsolute(E8 60); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BBB9:Route#1; MoveRelative(00 50); MoveRelative(00 40); MoveRelative(F0 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE AB5B:FC(FF E0); D8-MoveAbsolute(14 E0); FaceDirection(80); F3-Pause(14); D8-MoveAbsolute(20 E8); D8-MoveAbsolute(28 00); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+OC A786:F3-Pause(06); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LG BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RG BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+
+
+Offense: 46
+
+QB B582:TakeSnap; DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); 2C-JumpTo B5AD:C1(0F 19 FD); E2(04); E3(04); D8-MoveAbsolute(16 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack E2; 93-Pass(54 43 32 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(A7 B5); C1(3C 41 7F); 27-JumpTo B59D:93-Pass(54 43 32 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C1(46 5A B3); 93-Pass(54 43 32 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BE6C:F3-Pause(19); D8-MoveAbsolute(E8 D0); F3-Pause(01); FaceDirection(80); SetToBlock(FF E0); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB BBC6:Route#3; D8-MoveAbsolute(20 D0); D8-MoveAbsolute(28 E8); D8-MoveAbsolute(28 00); D8-MoveAbsolute(20 18); D8-MoveAbsolute(10 28); D8-MoveAbsolute(F0 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+WR2 BA67:Route#4; MoveRelative(00 40); MoveRelative(00 4C); MoveRelative(FC 04); MoveRelative(FC 00); MoveRelative(FC FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BBDC:Route#2; D8-MoveAbsolute(CC 60); MoveRelative(30 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 47
+
+QB B5BD:ShotgunTakeSnap; DropBack(00 F8); TakeControl; FaceDirection(80); 2C-JumpTo B5DF:C1(0F 19 FD); E2(04); E3(04); D8-MoveAbsolute(14 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack E1; 94-Pass(44 33 31 25 F2) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(D9 B5); C1(64 B4 99); 94-Pass(44 33 31 25 F2) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BBE6:Route#5; D8-MoveAbsolute(20 CC); D8-MoveAbsolute(24 D8); D8-MoveAbsolute(24 08); D8-MoveAbsolute(28 1C); D8-MoveAbsolute(30 28); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BBF9:Route#4; D9-MoveAbsolute(B2 60); D9-MoveAbsolute(B0 68); MoveRelative(FC 04); MoveRelative(FC 00); MoveRelative(FC FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BC0F:Route#2; D8-MoveAbsolute(CC 30); MoveRelative(F0 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BC19:Route#1; D9-MoveAbsolute(C4 70); MoveRelative(E0 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BC23:Route#3; D8-MoveAbsolute(18 40); D8-MoveAbsolute(F0 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 48
+
+QB B5EF:ShotgunTakeSnap; DropBack(00 E8); TakeControl; FaceDirection(80); 2C-JumpTo B611:C1(05 0A FD); E2(04); E3(04); 27-JumpTo B624:D8-MoveAbsolute(D1 F0); LoopBack F8; 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DE; 94-Pass(34 33 25 21 F2) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// D8-MoveAbsolute(FB F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DE; 94-Pass(34 33 25 21 F2) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(0B B6); C1(A0 FF D9); 94-Pass(34 33 25 21 F2) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B83C:Route#3; MoveRelative(00 40); LoopBack FD// 
+FB BC2D:Route#4; D8-MoveAbsolute(D8 00); D8-MoveAbsolute(D8 50); MoveRelative(18 28); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BDA4:Route#2; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+WR2 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+TE BC3A:Route#5; F3-Pause(3C); D8-MoveAbsolute(20 10); D8-MoveAbsolute(28 20); D9-MoveAbsolute(C0 30); D9-MoveAbsolute(C4 48); MoveRelative(00 60); MoveRelative(E0 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 49
+
+QB B629:TakeSnap; DropBack(00 DC); TakeControl; 2C-JumpTo B64E:C1(05 0A FD); E2(03); E3(03); 27-JumpTo B661:D8-MoveAbsolute(CC F0); LoopBack F8; 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DE; 94-Pass(35 33 34 21 F2) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// D8-MoveAbsolute(16 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DE; 94-Pass(35 33 34 21 F2) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// DropBack(00 E0); FaceDirection(80); C7-Move(48 B6); C1(1E F0 BF); 94-Pass(35 33 34 21 F2) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BC52:Route#3; D8-MoveAbsolute(E8 B8); D8-MoveAbsolute(D8 C0); D8-MoveAbsolute(C8 D0); D8-MoveAbsolute(C0 E0); 27-JumpTo B832:F4-Pause(00); LoopBack FE// F4-Pause(5A); D8-MoveAbsolute(B8 50); D8-MoveAbsolute(B8 78); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BC6D:Route#4; D8-MoveAbsolute(C4 20); D8-MoveAbsolute(F0 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BDD6:Route#2; JumpTo BAA9:MoveRelative(00 60); MoveRelative(00 70); MoveRelative(1C 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BC77:Route#1; D9-MoveAbsolute(C0 60); MoveRelative(04 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BDD2:Route#5; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 4A
+
+QB B666:TakeSnap; DropBack(00 DC); TakeControl; 2C-JumpTo B68B:C1(05 0A FD); E2(03); E3(03); D8-MoveAbsolute(17 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack E1; 94-Pass(43 34 31 22 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// DropBack(00 E0); FaceDirection(80); C7-Move(85 B6); C1(50 F0 D9); 94-Pass(43 34 31 22 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BC81:Route#5; D8-MoveAbsolute(10 B8); D8-MoveAbsolute(18 C4); D8-MoveAbsolute(18 D0); D8-MoveAbsolute(28 E0); D8-MoveAbsolute(28 10); D8-MoveAbsolute(18 30); D8-MoveAbsolute(F0 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BDDA:Route#3; JumpTo BBA6:D8-MoveAbsolute(C8 28); MoveRelative(F8 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BC9A:Route#2; D9-MoveAbsolute(36 40); MoveRelative(10 18); MoveRelative(00 40); MoveRelative(F4 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 B87C:Route#1; MoveRelative(00 6C); MoveRelative(00 50); MoveRelative(00 50); MoveRelative(00 50); MoveRelative(D0 70); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BCAA:Route#4; D8-MoveAbsolute(14 68); D8-MoveAbsolute(00 78); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 4B
+
+QB AA26:TakeSnap; D8-MoveAbsolute(F0 E0); Boost-RS(04); Boost-MS(03); Pitch-HB; D8-MoveAbsolute(F0 9C); F3-Pause(01); FaceDirection(80); F4-Pause(5A); FaceDirection(80); Boost-MS(00); TakeControl; C7-Move(4C AA); C1(0A 6E 7F); 91-Pass(A4 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B8A5:Route#2; F3-Pause(1E); D8-MoveAbsolute(D8 C0); D8-MoveAbsolute(C0 D0); Handoff-WR1; FC(00 00); FaceDirection(E0); F3-Pause(0A); D8-MoveAbsolute(B8 E0); D8-MoveAbsolute(B8 F0); D8-MoveAbsolute(B0 00); MoveRelative(00 40); MoveRelative(00 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB A978:D8-MoveAbsolute(C8 00); D8-MoveAbsolute(C0 10); SetToBlock(09 40); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+WR1 AA52:F3-Pause(3C); D9-MoveAbsolute(36 E8); D8-MoveAbsolute(C0 C8); D8-MoveAbsolute(D0 B8); Pitch-QB; FaceDirection(E0); F3-Pause(14); FaceDirection(80); SetToBlock(99 00); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+WR2 B87C:Route#1; MoveRelative(00 6C); MoveRelative(00 50); MoveRelative(00 50); MoveRelative(00 50); MoveRelative(D0 70); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BE8A:D8-MoveAbsolute(14 C4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(22 80); LoopForward 51; FC(FF E0); PassBlock; LoopBack FC// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 4C
+
+QB B69B:TakeSnap; DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); 2F-JumpTo B6CF:C1(0F 19 FD); E2(04); E3(04); D8-MoveAbsolute(CC F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack D2; 2A-JumpTo B6BA:C1(55 D2 D9); 94-Pass(24 43 32 31 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 91-Pass(F4 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(C9 B6); C1(05 19 7F); 2A-JumpTo B6BA:C1(55 D2 D9); 94-Pass(24 43 32 31 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 91-Pass(F4 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BCB4:Route#4; D9-MoveAbsolute(C4 00); MoveRelative(00 50); MoveRelative(00 48); MoveRelative(F0 70); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BCC4:Route#3; D8-MoveAbsolute(20 E8); D9-MoveAbsolute(C0 F0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BCCE:Route#5; D9-MoveAbsolute(38 28); D9-MoveAbsolute(40 60); JumpTo BF5D:MoveRelative(00 50); LoopBack FD// 
+WR2 BCD8:Route#1; D9-MoveAbsolute(4C 10); D9-MoveAbsolute(50 30); D9-MoveAbsolute(58 44); D9-MoveAbsolute(80 70); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BCE8:Route#2; D8-MoveAbsolute(14 20); D9-MoveAbsolute(B8 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 4D
+
+QB B6DF:TakeSnap; DropBack(00 DC); TakeControl; 2C-JumpTo B703:FaceDirection(80); C1(23 2D FD); E2(03); E3(03); D8-MoveAbsolute(FB F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack E0; 93-Pass(54 42 31 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// DropBack(00 E0); FaceDirection(80); C7-Move(FD B6); C1(5A D2 D9); 93-Pass(54 42 31 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BCF2:Route#3; MoveRelative(00 28); MoveRelative(04 08); MoveRelative(14 08); MoveRelative(00 04); MoveRelative(F4 08); D9-MoveAbsolute(38 28); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BD08:Route#4; MoveRelative(00 1C); MoveRelative(F8 20); D8-MoveAbsolute(E8 38); JumpTo BF5D:MoveRelative(00 50); LoopBack FD// 
+WR1 BDCA:Route#2; JumpTo BA52:MoveRelative(00 40); MoveRelative(00 4C); MoveRelative(04 04); MoveRelative(04 00); MoveRelative(04 FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BDA0:Route#1; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+TE BE8A:D8-MoveAbsolute(14 C4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(22 80); LoopForward 51; FC(FF E0); PassBlock; LoopBack FC// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 4E
+
+QB B715:ShotgunTakeSnap; DropBack(00 F8); TakeControl; FaceDirection(80); C7-Move(3D B7); C1(3A 3C 7F); 27-JumpTo B72E:C1(28 C8 D9); 94-Pass(04 33 32 31 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 91-Pass(F4 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BD15:Route#5; D8-MoveAbsolute(B8 C0); D8-MoveAbsolute(B6 C2); D8-MoveAbsolute(B6 C4); D8-MoveAbsolute(B8 C6); D8-MoveAbsolute(BA C6); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BD28:Route#4; D8-MoveAbsolute(C0 60); MoveRelative(18 28); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BD32:Route#3; D9-MoveAbsolute(36 40); D9-MoveAbsolute(3A 40); D9-MoveAbsolute(3A 58); D9-MoveAbsolute(36 60); D9-MoveAbsolute(3A 68); MoveRelative(00 40); LoopBack FD// 
+WR2 BD47:Route#1; D9-MoveAbsolute(A8 48); D9-MoveAbsolute(80 48); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BDA4:Route#2; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 4F
+
+QB B743:ShotgunTakeSnap; DropBack(00 F8); TakeControl; FaceDirection(80); 2C-JumpTo B765:C1(23 2D FD); E2(04); E3(04); D8-MoveAbsolute(CE F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack E1; 94-Pass(44 32 31 23 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(5F B7); C1(5A FF D9); 94-Pass(44 32 31 23 F5) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BD51:Route#5; D8-MoveAbsolute(08 C4); D8-MoveAbsolute(D4 C4); D8-MoveAbsolute(C8 C8); D8-MoveAbsolute(BC D8); D8-MoveAbsolute(B8 E8); F4-Pause(0A); D8-MoveAbsolute(B8 20); D8-MoveAbsolute(B8 30); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BD6C:Route#4; D9-MoveAbsolute(48 28); D8-MoveAbsolute(C8 40); D8-MoveAbsolute(D0 58); D8-MoveAbsolute(E0 68); D8-MoveAbsolute(00 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BD7F:Route#1; MoveRelative(00 10); MoveRelative(04 10); MoveRelative(10 18); MoveRelative(10 10); D8-MoveAbsolute(10 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BDA4:Route#2; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+TE B83C:Route#3; MoveRelative(00 40); LoopBack FD// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 50
+
+QB A33A:TakeSnap; D8-MoveAbsolute(F8 E0); D8-MoveAbsolute(F8 DC); Fake-FB; D8-MoveAbsolute(F8 DA); Pitch-HB; D8-MoveAbsolute(F0 D0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A34C:D8-MoveAbsolute(E0 B0); C7-Move(82 A3); D8-MoveAbsolute(F4 B0); D8-MoveAbsolute(20 D8); TakeControl; C8-Move(72 A3 09); C8-Move(76 A3 05); C8-Move(7A A3 02); C7-Move(7E A3); D8-MoveAbsolute(28 F4); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB A386:D8-MoveAbsolute(00 CC); D8-MoveAbsolute(F8 E8); D8-MoveAbsolute(F8 38); FC(FF E0); SetToBlock(0F E0); CE-MoveAbsolute(10 50); CD(F0 20); LoopBack FD// 
+WR1 A39D:D9-MoveAbsolute(36 18); FC(FF E0); SetToBlock(06 60); CE-MoveAbsolute(F8 60); CD(08 D0); LoopBack FD// 
+WR2 A3AE:D9-MoveAbsolute(B0 F8); FC(FF E0); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+TE B82E:F3-Pause(00); LoopBack FE// 
+OC A3BF:FC(40 00); D8-MoveAbsolute(EC 00); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A3C8:FC(08 00); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG B775:D8-MoveAbsolute(08 00); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+LT A3D7:FC(80 00); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT A3DD:FC(20 00); D8-MoveAbsolute(10 00); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+
+
+
+
+
+
+Offense: 53
+
+QB AB3E:TakeSnap; D8-MoveAbsolute(F8 D4); Handoff-HB; D8-MoveAbsolute(F8 C8); D8-MoveAbsolute(F4 BC); D8-MoveAbsolute(E8 B4); D8-MoveAbsolute(D8 B0); D8-MoveAbsolute(C8 B0); JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB ABC9:F3-Pause(0D); D8-MoveAbsolute(F0 C4); D8-MoveAbsolute(00 D8); TakeControl; C8-Move(F1 AB 09); C8-Move(F5 AB 05); C8-Move(F9 AB 02); C7-Move(FD AB); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(08 EC); D8-MoveAbsolute(10 08); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+FB B77B:MoveRelative(00 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 AACC:F7(10); D9-MoveAbsolute(36 10); JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR2 BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE AC05:D8-MoveAbsolute(14 E0); F3-Pause(08); D8-MoveAbsolute(20 EC); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+OC B832:F4-Pause(00); LoopBack FE// 
+LG BE30:FC(FF E0); Block-NT; LoopBack FC// 
+RG BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT AC10:D8-MoveAbsolute(10 F8); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+
+
+
+
+
+
+
+
+
+
+
+Offense: 57
+
+QB B128:TakeSnap; DropBack(00 F8); C8-Move(49 B1 09); C8-Move(4D B1 05); C8-Move(51 B1 02); C7-Move(55 B1); D8-MoveAbsolute(FA E4); TakeControl; D8-MoveAbsolute(FA 00); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+HB B832:F4-Pause(00); LoopBack FE// 
+FB B15D:27-JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// JumpTo BE60:FC(FF E0); Block-FS; LoopBack FC// 
+WR1 BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+WR2 BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+TE B163:27-JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG B169:27-JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG B16F:D8-MoveAbsolute(04 F8); JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT B175:27-JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Offense: 59
+
+QB B1FB:TakeSnap; D8-MoveAbsolute(F0 E0); D8-MoveAbsolute(F8 D0); Handoff-FB; D8-MoveAbsolute(00 C0); D8-MoveAbsolute(08 B8); D8-MoveAbsolute(18 B0); D8-MoveAbsolute(28 B0); D8-MoveAbsolute(30 B8); D8-MoveAbsolute(38 C8); D8-MoveAbsolute(38 00); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+HB B21B:D8-MoveAbsolute(D4 D0); D8-MoveAbsolute(10 E8); D8-MoveAbsolute(34 18); SetToBlock(FF E0); CE-MoveAbsolute(20 30); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB B22D:F3-Pause(19); D8-MoveAbsolute(04 C8); D8-MoveAbsolute(E8 C8); D8-MoveAbsolute(D8 D0); D8-MoveAbsolute(C8 E0); Pitch-WR1; D8-MoveAbsolute(C0 F0); D8-MoveAbsolute(C0 00); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 B245:F3-Pause(64); D8-MoveAbsolute(B8 D8); D8-MoveAbsolute(D0 C0); C8-Move(73 B2 09); C8-Move(77 B2 05); C8-Move(7B B2 02); C7-Move(7F B2); D8-MoveAbsolute(E8 B8); D8-MoveAbsolute(F8 B8); TakeControl; D8-MoveAbsolute(08 B8); 2B-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// D8-MoveAbsolute(18 C0); JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// 
+WR2 A901:D9-MoveAbsolute(C0 48); JumpTo BE66:FC(FF E0); Block-SS; LoopBack FC// 
+TE B7E8:D8-MoveAbsolute(D0 00); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+OC BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG AD67:D8-MoveAbsolute(E4 E8); D8-MoveAbsolute(D0 E8); D8-MoveAbsolute(C8 EE); D8-MoveAbsolute(C0 FC); JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+RG B82E:F3-Pause(00); LoopBack FE// 
+LT BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT B79C:2B-JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// FC(FF E0); JumpTo B82E:F3-Pause(00); LoopBack FE// 
+
+
+Offense: 5A
+
+QB B7EE:TakeSnap; F4-Pause(14); JumpTo B2F0:DropBack(00 DC); TakeControl; DropBack(00 F0); FaceDirection(80); 2C-JumpTo B313:C1(23 2D FD); E2(04); E3(04); 27-JumpTo B326:D8-MoveAbsolute(CC F0); LoopBack F8; 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DF; 93-Pass(31 35 44 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// D8-MoveAbsolute(16 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// LoopBack DF; 93-Pass(31 35 44 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(0D B3); C1(41 8C 7F); 93-Pass(31 35 44 F3) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB B9F3:Route#1; F5-Pause(3C 50); D8-MoveAbsolute(C8 C0); D8-MoveAbsolute(B8 C8); D8-MoveAbsolute(B4 D8); 2C-JumpTo B832:F4-Pause(00); LoopBack FE// F4-Pause(3C); D8-MoveAbsolute(B4 30); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BE7B:F3-Pause(19); D8-MoveAbsolute(F8 CC); F3-Pause(01); FaceDirection(80); SetToBlock(FF E0); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+WR1 BDA4:Route#2; JumpTo B83D:MoveRelative(00 40); LoopBack FD// 
+WR2 BA0B:Route#4; MoveRelative(00 5C); MoveRelative(00 18); MoveRelative(FE 02); MoveRelative(FE 00); MoveRelative(FE FE); MoveRelative(00 FE); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BA21:Route#3; D8-MoveAbsolute(CC 20); D8-MoveAbsolute(F0 40); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+
+
+Offense: 5B
+
+QB B7F4:ShotgunTakeSnap; FaceDirection(80); F3-Pause(05); DropBack(00 F8); JumpTo B32C:FaceDirection(80); TakeControl; 2C-JumpTo B351:C1(2D 37 FD); E2(03); E3(03); D8-MoveAbsolute(E6 F0); 27-JumpTo B838:TakeControl; ComputerTakeControl; LoopBack FF// F3-Pause(1E); LoopBack D8; 27-JumpTo B340:94-Pass(35 34 33 32 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C1(5A 96 CC); 94-Pass(35 34 33 32 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C7-Move(4B B3); C1(5A 5F 7F); 27-JumpTo B340:94-Pass(35 34 33 32 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// C1(5A 96 CC); 94-Pass(35 34 33 32 F1) Branch-B842:TakeControl; ComputerTakeControl; LoopBack FF// JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB BDA8:Route#5; F5-Pause(3C 50); D8-MoveAbsolute(C8 C0); D8-MoveAbsolute(B8 C8); D8-MoveAbsolute(B4 D8); JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB BA2B:Route#2; D8-MoveAbsolute(C0 30); MoveRelative(04 04); MoveRelative(04 00); MoveRelative(04 FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR1 BA51:Route#1; MoveRelative(00 40); MoveRelative(00 4C); MoveRelative(04 04); MoveRelative(04 00); MoveRelative(04 FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 BA67:Route#4; MoveRelative(00 40); MoveRelative(00 4C); MoveRelative(FC 04); MoveRelative(FC 00); MoveRelative(FC FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE BA3E:Route#3; D8-MoveAbsolute(20 30); MoveRelative(FC 04); MoveRelative(FC 00); MoveRelative(FC FC); MoveRelative(00 FC); JumpTo B832:F4-Pause(00); LoopBack FE// 
+OC BE99:FaceDirection(80); F3-Pause(0A); D8-MoveAbsolute(F0 EC); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(EC 00); LoopForward 3E; FC(FF E0); PassBlock; LoopBack FC// 
+LG BEAC:D8-MoveAbsolute(E0 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(D8 00); LoopForward 2F; FC(FF E0); PassBlock; LoopBack FC// 
+RG BEBB:D8-MoveAbsolute(00 E4); F3-Pause(01); FaceDirection(80); FC(FF E0); SetToBlock(2E 00); LoopForward 20; FC(FF E0); PassBlock; LoopBack FC// 
+LT BECA:D8-MoveAbsolute(D4 D4); F3-Pause(01); FaceDirection(60); FC(FF E0); SetToBlock(19 00); LoopForward 11; FC(FF E0); PassBlock; LoopBack FC// 
+RT BED9:D8-MoveAbsolute(0C D4); F3-Pause(01); FaceDirection(A0); FC(FF E0); SetToBlock(06 80); LoopForward 02; FC(FF E0); PassBlock; LoopBack FC// 
+

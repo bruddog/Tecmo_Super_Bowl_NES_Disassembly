@@ -1,0 +1,328 @@
+Offensive Formation: 00
+
+QB A033:B0-SetPosFromKick(F0 80); 2pt; FC(86 00); B4-MoveAbsolute(78 B0); SetToBlock(FF E0); CD(00 7F); CF(08 E0); LoopBack FD// 
+HB A01B:B0-SetPosFromKick(DC 88); 2pt; FC(3C 00); B4-MoveAbsolute(60 A0); SetToBlock(FF E0); CD(F8 10); CD(00 7F); CF(F8 E8); LoopBack FD// 
+FB A000:B0-SetPosFromKick(CC 98); 2pt; FC(FF E0); B4-MoveAbsolute(48 88); SetToBlock(FF E0); F5-Pause(01 19); CD(60 28); CD(0C 7F); CF(10 00); LoopBack FD// 
+WR1 A048:B0-SetPosFromKick(04 88); 2pt; FC(03 C0); B4-MoveAbsolute(90 A0); SetToBlock(FF E0); CD(08 10); CD(00 7F); CF(00 C8); LoopBack FD// 
+WR2 A060:B0-SetPosFromKick(18 98); 2pt; FC(00 E0); B4-MoveAbsolute(A8 88); SetToBlock(FF E0); F5-Pause(01 19); CD(A8 28); CD(F8 7F); CF(F0 00); LoopBack FD// 
+TE A07B:B1-SetPosFromKick(CC 00); 2pt; FC(70 00); B4-MoveAbsolute(50 38); SetToBlock(FF E0); CD(04 7F); CF(F8 18); LoopBack FD// 
+OC A090:B1-SetPosFromKick(E4 00); 2pt; FC(0E 00); B4-MoveAbsolute(68 48); SetToBlock(FF E0); CD(04 7F); CD(04 7F); CD(00 7F); CD(00 7F); PassBlock; LoopBack FF// 
+LG A0AC:B1-SetPosFromKick(FC 00); 2pt; FC(07 00); B4-MoveAbsolute(88 48); SetToBlock(FF E0); CD(FC 7F); CD(FC 7F); CD(00 7F); CD(00 7F); PassBlock; LoopBack FF// 
+RG A0C8:B1-SetPosFromKick(14 00); 2pt; B4-MoveAbsolute(A0 38); SetToBlock(FF E0); CD(04 7F); CF(08 20); LoopBack FD// 
+LT A0DA:B1-SetPosFromKick(E0 78); 2pt; B4-MoveAbsolute(88 28); FC(FF E0); CF(00 30); CD(00 7F); CF(00 B8); LoopBack FD// 
+RT A0EF:B1-SetPosFromKick(00 48); 2pt; Boost-MS(30); SwitchIcon; Boost-MS(00); TakeControl; ComputerTakeControl; LoopBack FF// 
+
+
+Offensive Formation: 01
+
+QB A0FC:SetPosFromHike(F0 48); 2pt; Punt; F4-Pause(00); LoopBack FE// 
+HB A105:SetPosFromHike(00 30); 2pt; FC(FF E0); JumpTo BEE8:FC(FF E0); PassBlock; LoopBack FC// 
+FB A10F:SetPosFromHike(C8 1C); 3pt; JumpTo A65F:D8-MoveAbsolute(C4 F8); 26-JumpTo A668:Boost-HP(10); JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+WR1 A116:SetPosFromMid(36 0C); 2pt; MoveRelative(00 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+WR2 A120:SetPosFromMid(C0 0C); 2pt; JumpTo A11A:MoveRelative(00 7F); JumpTo B832:F4-Pause(00); LoopBack FE// 
+TE A127:SetPosFromHike(18 1C); 3pt; JumpTo A720:D8-MoveAbsolute(20 F8); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+OC A12E:SetPosFromHike(F0 06); ShotgunHike; JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+LG A135:SetPosFromHike(E4 0C); 3pt; JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG A13C:SetPosFromHike(FC 0C); 3pt; JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT A143:SetPosFromHike(D8 0C); 3pt; JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+RT A14A:SetPosFromHike(08 0C); 2pt; JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+
+
+Offensive Formation: 02
+
+QB A16A:SetPosFromHike(F0 40); FieldGoalTakeSnap; JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A171:SetPosFromHike(F0 60); 2pt; FieldGoal; JumpTo B832:F4-Pause(00); LoopBack FE// 
+FB A179:SetPosFromHike(B4 24); 3pt; Boost-HP(06); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+WR1 A182:SetPosFromHike(C4 10); 3pt; Boost-HP(06); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+WR2 A18B:SetPosFromHike(D4 10); 3pt; Boost-HP(06); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+TE A194:SetPosFromHike(E0 10); 3pt; JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+OC A19B:SetPosFromHike(F0 08); FaceDirection(80); ShotgunHike; JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+LG A1A4:SetPosFromHike(00 10); 3pt; D8-MoveAbsolute(FC F8); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG A1AE:SetPosFromHike(0C 10); 3pt; D8-MoveAbsolute(08 F8); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT A1B8:SetPosFromHike(1C 10); 3pt; D8-MoveAbsolute(18 F8); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+RT A1C2:SetPosFromHike(30 24); 3pt; JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+
+
+Offensive Formation: 03
+
+QB A16A:SetPosFromHike(F0 40); FieldGoalTakeSnap; JumpTo B832:F4-Pause(00); LoopBack FE// 
+HB A1C9:SetPosFromHike(F0 60); 2pt; ExtraPoint; F4-Pause(00); LoopBack FE// 
+FB A179:SetPosFromHike(B4 24); 3pt; Boost-HP(06); JumpTo BE2A:FC(FF E0); Block-RE; LoopBack FC// 
+WR1 A182:SetPosFromHike(C4 10); 3pt; Boost-HP(06); JumpTo BE5A:FC(FF E0); Block-LCB; LoopBack FC// 
+WR2 A18B:SetPosFromHike(D4 10); 3pt; Boost-HP(06); JumpTo BE30:FC(FF E0); Block-NT; LoopBack FC// 
+TE A194:SetPosFromHike(E0 10); 3pt; JumpTo BE36:FC(FF E0); Block-LE; LoopBack FC// 
+OC A19B:SetPosFromHike(F0 08); FaceDirection(80); ShotgunHike; JumpTo BE3C:FC(FF E0); Block-ROLB; LoopBack FC// 
+LG A1A4:SetPosFromHike(00 10); 3pt; D8-MoveAbsolute(FC F8); JumpTo BE42:FC(FF E0); Block-RILB; LoopBack FC// 
+RG A1AE:SetPosFromHike(0C 10); 3pt; D8-MoveAbsolute(08 F8); JumpTo BE48:FC(FF E0); Block-LILB; LoopBack FC// 
+LT A1B8:SetPosFromHike(1C 10); 3pt; D8-MoveAbsolute(18 F8); JumpTo BE4E:FC(FF E0); Block-LOLB; LoopBack FC// 
+RT A1C2:SetPosFromHike(30 24); 3pt; JumpTo BE54:FC(FF E0); Block-RCB; LoopBack FC// 
+
+
+Offensive Formation: 04
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A222:SetPosFromHike(D4 40); 3pt; 
+FB A273:SetPosFromHike(0C 40); 3pt; 
+WR1 A29A:SetPosFromMid(36 14); 2pt; 
+WR2 A2D3:SetPosFromMid(C0 0C); 2pt; 
+TE A2F7:SetPosFromHike(CC 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 05
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A213:SetPosFromHike(D4 40); Shift(3C); D8-MoveAbsolute(D4 CC); D8-MoveAbsolute(E0 D8); D9-MoveAbsolute(C0 D8); 2pt; 
+FB A273:SetPosFromHike(0C 40); 3pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A2CF:SetPosFromMid(4C 18); 2pt; 
+TE A2F3:SetPosFromHike(14 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 06
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A20F:SetPosFromHike(F0 48); 3pt; 
+FB A26F:SetPosFromHike(C8 18); 2pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A2CB:SetPosFromMid(C0 14); 2pt; 
+TE A2F3:SetPosFromHike(14 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 07
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A20F:SetPosFromHike(F0 48); 3pt; 
+FB A26B:SetPosFromHike(CC 0C); 3pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A2CB:SetPosFromMid(C0 14); 2pt; 
+TE A2F3:SetPosFromHike(14 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 08
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A20F:SetPosFromHike(F0 48); 3pt; 
+FB A26F:SetPosFromHike(C8 18); 2pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A2BC:SetPosFromHike(B8 18); Motion(14); D8-MoveAbsolute(B8 D8); MoveRelative(40 00); D9-MoveAbsolute(B8 D8); 2pt; 
+TE A2F3:SetPosFromHike(14 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 09
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A1FF:SetPosFromHike(D4 40); Shift(32); D8-MoveAbsolute(D4 C0); D8-MoveAbsolute(F0 C0); 3pt; 
+FB A25C:SetPosFromHike(0C 40); Shift(14); D8-MoveAbsolute(0C D8); D9-MoveAbsolute(50 D8); D9-MoveAbsolute(50 E8); 3pt; 
+WR1 A28D:SetPosFromHike(CC 0C); Shift(28); D9-MoveAbsolute(36 F4); 2pt; 
+WR2 A2B3:SetPosFromHike(1C 0C); Shift(28); D9-MoveAbsolute(C0 F4); 2pt; 
+TE A2F3:SetPosFromHike(14 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 0A
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A1F6:SetPosFromHike(F0 48); Shift(64); D8-MoveAbsolute(0C B8); 3pt; 
+FB A253:SetPosFromHike(14 0C); Shift(50); D9-MoveAbsolute(C0 F4); 2pt; 
+WR1 A284:SetPosFromMid(2C 14); Motion(32); D8-MoveAbsolute(C0 EC); 2pt; 
+WR2 A2AA:SetPosFromMid(C6 18); Motion(8C); D8-MoveAbsolute(10 E8); 2pt; 
+TE A2F7:SetPosFromHike(CC 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 0B
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A1F2:SetPosFromHike(0C 30); 3pt; 
+FB A24F:SetPosFromHike(F0 48); 3pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A2CB:SetPosFromMid(C0 14); 2pt; 
+TE A2F3:SetPosFromHike(14 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 0C
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A20F:SetPosFromHike(F0 48); 3pt; 
+FB A24B:SetPosFromHike(C4 18); 2pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A2D3:SetPosFromMid(C0 0C); 2pt; 
+TE A2EF:SetPosFromHike(1C 18); 2pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 0D
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A20F:SetPosFromHike(F0 48); 3pt; 
+FB A247:SetPosFromHike(18 16); 2pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A2A6:SetPosFromMid(C6 0C); 2pt; 
+TE A2EB:SetPosFromMid(B2 18); 2pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 0E
+
+QB A1D2:SetPosFromHike(F0 48); QB-Stance; 
+HB A23B:SetPosFromHike(D8 40); 2pt; 
+FB A243:SetPosFromMid(48 18); 2pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A2E3:SetPosFromMid(A8 18); 2pt; 
+TE A2E7:SetPosFromMid(C0 0C); 2pt; 
+OC A2FB:SetPosFromHike(F0 06); ShotgunHike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 0F
+
+QB A1D2:SetPosFromHike(F0 48); QB-Stance; 
+HB A23B:SetPosFromHike(D8 40); 2pt; 
+FB A243:SetPosFromMid(48 18); 2pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A29E:SetPosFromMid(C0 0C); 2pt; 
+TE A2E3:SetPosFromMid(A8 18); 2pt; 
+OC A2FB:SetPosFromHike(F0 06); ShotgunHike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 10
+
+QB A1D2:SetPosFromHike(F0 48); QB-Stance; 
+HB A1EE:SetPosFromHike(0C 40); 2pt; 
+FB A23F:SetPosFromMid(B2 18); 2pt; 
+WR1 A280:SetPosFromHike(CC 0C); 3pt; 
+WR2 A2A6:SetPosFromMid(C6 0C); 2pt; 
+TE A2DF:SetPosFromHike(18 16); 2pt; 
+OC A2FB:SetPosFromHike(F0 06); ShotgunHike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 11
+
+QB A1D2:SetPosFromHike(F0 48); QB-Stance; 
+HB A1EA:SetPosFromHike(C0 18); 2pt; 
+FB A23B:SetPosFromHike(D8 40); 2pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A29E:SetPosFromMid(C0 0C); 2pt; 
+TE A2DB:SetPosFromHike(20 18); 2pt; 
+OC A2FB:SetPosFromHike(F0 06); ShotgunHike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 12
+
+QB A1D2:SetPosFromHike(F0 48); QB-Stance; 
+HB A1E6:SetPosFromHike(0C 40); 2pt; 
+FB A237:SetPosFromMid(48 0C); 2pt; 
+WR1 A277:SetPosFromMid(2E 18); Motion(5A); D8-MoveAbsolute(CC E8); 3pt; 
+WR2 A29E:SetPosFromMid(C0 0C); 2pt; 
+TE A2D7:SetPosFromMid(3A 0C); 2pt; 
+OC A2FB:SetPosFromHike(F0 06); ShotgunHike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 13
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A1DA:SetPosFromHike(0C 40); Shift(3C); D8-MoveAbsolute(0C D8); D8-MoveAbsolute(D4 D8); 3pt; 
+FB A226:SetPosFromHike(D4 40); Shift(46); D8-MoveAbsolute(C0 C0); D8-MoveAbsolute(C0 E4); Shift(3C); D9-MoveAbsolute(B8 E4); 3pt; 
+WR1 A28D:SetPosFromHike(CC 0C); Shift(28); D9-MoveAbsolute(36 F4); 2pt; 
+WR2 A2B3:SetPosFromHike(1C 0C); Shift(28); D9-MoveAbsolute(C0 F4); 2pt; 
+TE A2F3:SetPosFromHike(14 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 14
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A273:SetPosFromHike(0C 40); 3pt; 
+FB A222:SetPosFromHike(D4 40); 3pt; 
+WR1 A29A:SetPosFromMid(36 14); 2pt; 
+WR2 A2D3:SetPosFromMid(C0 0C); 2pt; 
+TE A2F7:SetPosFromHike(CC 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
+
+
+Offensive Formation: 15
+
+QB A1D6:SetPosFromHike(F0 12); QB-Stance; 
+HB A26F:SetPosFromHike(C8 18); 2pt; 
+FB A20F:SetPosFromHike(F0 48); 3pt; 
+WR1 A296:SetPosFromMid(36 0C); 2pt; 
+WR2 A2CB:SetPosFromMid(C0 14); 2pt; 
+TE A2F3:SetPosFromHike(14 0C); 3pt; 
+OC A2FF:SetPosFromHike(F0 06); Hike; 
+LG A303:SetPosFromHike(E4 0C); 3pt; 
+RG A307:SetPosFromHike(FC 0C); 3pt; 
+LT A30B:SetPosFromHike(D8 0C); 3pt; 
+RT A30F:SetPosFromHike(08 0C); 3pt; 
