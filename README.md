@@ -26,7 +26,7 @@ sram_variables.asm - Memory labels for the Save Memory in the NES memory (0x6000
 
 # Building
 
-Building the game is relatively simple. Download the repository. From the tools folder copy asm6f_32.exe and place it into the same folder as master_build.asm. You will also need a master copy of the original ROM. This goes into the same folder as master_build.asm as well. It needs to be named TSB.nes.
+Building the game is relatively simple. Download the repository. From the tools folder copy [asm6f_32.exe](https://github.com/freem/asm6f) and place it into the same folder as master_build.asm. You will also need a master copy of the original ROM. This goes into the same folder as master_build.asm as well. It needs to be named TSB.nes.
 
 Click on asm6.bat to open DOS command prompt in the same folder as master_build.asm and type:
 
