@@ -1855,901 +1855,4204 @@ K_ABILITIES_OFFSET				.dsb 4
 P_ABILITIES_OFFSET				.dsb 4
 .ENDE
 
+; Attribute identifiers
+; - In the player data, these are stored as nibbles (notice no value is greater than $0F)
+ATTRIBUTE_6 = $00
+ATTRIBUTE_13 = $01
+ATTRIBUTE_19 = $02
+ATTRIBUTE_25 = $03
+ATTRIBUTE_31 = $04
+ATTRIBUTE_38 = $05
+ATTRIBUTE_44 = $06
+ATTRIBUTE_50 = $07
+ATTRIBUTE_56 = $08
+ATTRIBUTE_63 = $09
+ATTRIBUTE_69 = $0A
+ATTRIBUTE_75 = $0B
+ATTRIBUTE_81 = $0C
+ATTRIBUTE_88 = $0D
+ATTRIBUTE_94 = $0E
+ATTRIBUTE_100 = $0F
+
+.MACRO ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] nibble_significant, nibble_least
+	.DB nibble_significant * 16 + nibble_least
+.ENDM
+
+.MACRO ADD_FACE_IDENTIFIER[faceId] face_id
+	.DB face_id
+.ENDM
+
 BUFFALO_ABILITIES:
-	.DB $A3,$11,$52,$8C,$CC
-	.DB $A3,$11,$22,$46,$37
-	.DB $A5,$93,$83,$B7
-	.DB $A6,$3D,$51,$73
-	.DB $A5,$32,$A5,$74
-	.DB $A5,$32,$8B,$74
-	.DB $A3,$51,$81,$78
-	.DB $A3,$81,$B6,$8A
-	.DB $A3,$61,$40,$76
-	.DB $A3,$21,$9A,$76
-	.DB $A3,$57,$B7,$77
-	.DB $A3,$26,$50,$74
-	.DB $A3,$5A,$1E
-	.DB $A3,$58,$07
-	.DB $A3,$39,$24
-	.DB $A3,$37,$48
-	.DB $A3,$29,$88
-	.DB $86,$AB,$88,$3C
-	.DB $43,$47,$0B,$22
-	.DB $43,$56,$AC,$47
-	.DB $64,$75,$AD,$69
-	.DB $43,$55,$30,$48
-	.DB $64,$78,$2F,$2A
-	.DB $75,$99,$82,$2A
-	.DB $65,$85,$C3,$58
-	.DB $43,$65,$89,$77
-	.DB $54,$75,$26,$66
-	.DB $54,$76,$84,$67
-	.DB $C8,$C4,$29,$66
-	.DB $83,$64,$20,$29
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $52															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_81			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_81			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $22															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $83															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_50			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_88			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $51															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_19			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A5															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_19			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $81															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_69			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $40															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $50															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $07															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $24															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $48															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_81			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_19			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AC															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $30															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $82															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $89															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $26															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $84															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $29															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $20															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Kicking Ability, Avoid Kick Block
+
 INDIANAPOLIS_ABILITIES:
-	.DB $A3,$01,$04,$74,$53
-	.DB $A3,$11,$03,$45,$47
-	.DB $A5,$47,$C0,$73
-	.DB $A5,$64,$96,$79
-	.DB $A5,$43,$92,$73
-	.DB $A5,$53,$C6,$73
-	.DB $A5,$51,$AB,$7A
-	.DB $A6,$51,$A5,$79
-	.DB $A5,$51,$9F,$76
-	.DB $A3,$31,$BD,$76
-	.DB $A3,$37,$0E,$75
-	.DB $A3,$27,$AE,$74
-	.DB $A3,$37,$AF
-	.DB $A3,$37,$95
-	.DB $A3,$55,$27
-	.DB $A3,$29,$C1
-	.DB $A3,$28,$07
-	.DB $43,$48,$B8,$23
-	.DB $43,$37,$8A,$22
-	.DB $43,$57,$87,$29
-	.DB $43,$57,$26,$35
-	.DB $43,$44,$31,$34
-	.DB $43,$46,$88,$37
-	.DB $43,$46,$84,$35
-	.DB $43,$55,$99,$44
-	.DB $43,$55,$85,$44
-	.DB $43,$56,$32,$66
-	.DB $43,$65,$A1,$56
-	.DB $C8,$C4,$10,$55
-	.DB $83,$64,$40,$B8
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $04															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $03															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $92															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A5															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AE															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AF															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $95															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $27															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $07															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_19			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $87															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $26															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $31															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $84															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $99															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $85															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $10															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $40															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
+
 MIAMI_ABILITIES:
-	.DB $A3,$01,$06,$CA,$9A
-	.DB $A3,$11,$40,$66,$37
-	.DB $A6,$59,$8D,$73
-	.DB $A6,$4D,$B4,$76
-	.DB $A6,$56,$85,$73
-	.DB $A5,$53,$8E,$75
-	.DB $A4,$61,$D0,$7A
-	.DB $A5,$71,$84,$79
-	.DB $A3,$21,$B3,$76
-	.DB $A3,$31,$A2,$77
-	.DB $A3,$58,$C0,$77
-	.DB $A3,$46,$05,$7A
-	.DB $A3,$4A,$2A
-	.DB $A3,$3A,$BF
-	.DB $A3,$59,$93
-	.DB $A3,$5B,$9C
-	.DB $A3,$38,$1E
-	.DB $75,$87,$82,$2A
-	.DB $43,$48,$C2,$22
-	.DB $43,$57,$C6,$27
-	.DB $43,$56,$B2,$37
-	.DB $43,$56,$B1,$36
-	.DB $75,$86,$32,$47
-	.DB $53,$66,$A3,$37
-	.DB $43,$67,$A4,$67
-	.DB $54,$76,$88,$77
-	.DB $65,$88,$92,$88
-	.DB $65,$88,$96,$88
-	.DB $C8,$C4,$18,$AB
-	.DB $83,$64,$B6,$B5
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $06															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_69			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_69			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $40															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_88			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $85															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $D0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $84															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $05															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2A															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BF															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $93															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_75			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $82															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_19			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $92															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $18															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_38			; Kicking Ability, Avoid Kick Block
+
 NEW_ENGLAND_ABILITIES:
-	.DB $A3,$01,$07,$23,$46
-	.DB $A3,$11,$33,$56,$35
-	.DB $A6,$35,$92,$73
-	.DB $A6,$47,$84,$74
-	.DB $A5,$44,$C3,$73
-	.DB $A5,$44,$47,$73
-	.DB $A4,$41,$AA,$79
-	.DB $A4,$41,$91,$77
-	.DB $A3,$21,$8E,$77
-	.DB $A3,$31,$36,$76
-	.DB $A3,$68,$21,$79
-	.DB $A3,$34,$42,$77
-	.DB $A3,$55,$43
-	.DB $A3,$27,$44
-	.DB $A3,$36,$AF
-	.DB $A3,$5A,$80
-	.DB $A3,$27,$32
-	.DB $43,$47,$A1,$27
-	.DB $43,$37,$34,$22
-	.DB $75,$88,$92,$48
-	.DB $53,$68,$85,$46
-	.DB $43,$55,$C2,$24
-	.DB $43,$45,$A4,$24
-	.DB $43,$45,$86,$25
-	.DB $54,$76,$88,$75
-	.DB $65,$87,$A3,$98
-	.DB $43,$67,$99,$76
-	.DB $43,$48,$8D,$44
-	.DB $C8,$C4,$2E,$96
-	.DB $83,$64,$15,$44
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $07															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $92															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $84															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $47															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $91															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $36															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $42															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $44															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AF															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $80															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $34															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_19			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $92															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $85															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $99															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_44			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $15															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Kicking Ability, Avoid Kick Block
+
 NEW_YORK_JETS_ABILITIES:
-	.DB $A3,$11,$0C,$87,$65
-	.DB $A3,$11,$09,$66,$34
-	.DB $A5,$63,$AA,$74
-	.DB $A5,$52,$AB,$73
-	.DB $A6,$44,$90,$73
-	.DB $A5,$62,$8B,$73
-	.DB $A4,$61,$86,$7A
-	.DB $A4,$41,$8D,$77
-	.DB $A3,$21,$A1,$76
-	.DB $A3,$21,$B0,$76
-	.DB $A3,$38,$42,$77
-	.DB $A3,$25,$43,$74
-	.DB $A3,$56,$1D
-	.DB $A3,$46,$41
-	.DB $A3,$47,$3D
-	.DB $A3,$37,$33
-	.DB $A3,$37,$2A
-	.DB $43,$46,$44,$24
-	.DB $43,$46,$48,$24
-	.DB $43,$57,$8F,$27
-	.DB $43,$46,$9A,$24
-	.DB $75,$8A,$21,$3A
-	.DB $64,$77,$10,$76
-	.DB $43,$46,$1F,$24
-	.DB $43,$55,$92,$64
-	.DB $43,$54,$C4,$64
-	.DB $65,$88,$87,$9C
-	.DB $43,$65,$8E,$75
-	.DB $C8,$C4,$36,$BA
-	.DB $83,$64,$2E,$AB
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $09															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_31			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_19			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $90															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_19			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $42															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1D															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $41															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $3D															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2A															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $44															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $48															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $10															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $92															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $87															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_81			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $36															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_69			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Kicking Ability, Avoid Kick Block
+
 CINCINNATI_ABILITIES:
-	.DB $A3,$21,$0A,$98,$AB
-	.DB $A3,$11,$34,$66,$55
-	.DB $A5,$84,$80,$75
-	.DB $A6,$4C,$C5,$74
-	.DB $A5,$54,$A3,$73
-	.DB $A5,$53,$AB,$73
-	.DB $A4,$41,$91,$78
-	.DB $A4,$51,$C1,$78
-	.DB $A3,$31,$B0,$76
-	.DB $A3,$31,$12,$76
-	.DB $A3,$5A,$C9,$78
-	.DB $A3,$35,$18,$74
-	.DB $A3,$48,$41
-	.DB $A3,$49,$1E
-	.DB $A3,$38,$48
-	.DB $A3,$5B,$0B
-	.DB $A3,$37,$4B
-	.DB $43,$57,$19,$23
-	.DB $43,$56,$43,$22
-	.DB $43,$56,$86,$24
-	.DB $64,$7A,$C0,$29
-	.DB $43,$55,$96,$24
-	.DB $43,$55,$24,$44
-	.DB $43,$45,$8F,$45
-	.DB $43,$34,$C6,$53
-	.DB $43,$34,$AA,$63
-	.DB $54,$77,$BD,$79
-	.DB $86,$AB,$8A,$AB
-	.DB $C8,$C4,$20,$94
-	.DB $83,$64,$11,$6A
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_56			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $34															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $80															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_81			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C5															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $91															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $12															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $18															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $41															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $48															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_75			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0B															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4B															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $19															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_19			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $24															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $20															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_31			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $11															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Kicking Ability, Avoid Kick Block
+
 CLEVELAND_ABILITIES:
-	.DB $A3,$31,$52,$6B,$76
-	.DB $A3,$31,$46,$54,$55
-	.DB $A6,$4D,$C0,$76
-	.DB $A5,$53,$8D,$78
-	.DB $A6,$34,$88,$73
-	.DB $A6,$35,$C7,$73
-	.DB $A4,$51,$A9,$79
-	.DB $A3,$31,$B8,$77
-	.DB $A3,$21,$C2,$76
-	.DB $A3,$21,$22,$76
-	.DB $A3,$47,$9F,$75
-	.DB $A3,$25,$C6,$73
-	.DB $A3,$56,$23
-	.DB $A3,$47,$38
-	.DB $A3,$37,$39
-	.DB $A3,$46,$32
-	.DB $A3,$37,$A7
-	.DB $43,$57,$B1,$25
-	.DB $43,$48,$A0,$22
-	.DB $43,$57,$B7,$25
-	.DB $53,$65,$9B,$55
-	.DB $43,$55,$98,$45
-	.DB $64,$7A,$80,$29
-	.DB $53,$65,$4E,$25
-	.DB $43,$55,$C4,$44
-	.DB $54,$77,$A1,$67
-	.DB $43,$56,$89,$44
-	.DB $43,$55,$85,$76
-	.DB $C8,$C4,$28,$54
-	.DB $83,$64,$09,$32
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $52															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_75			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $46															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_88			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $22															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $23															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $38															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $39															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A7															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_19			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $98															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $80															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $89															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $85															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $28															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $09															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_19			; Kicking Ability, Avoid Kick Block
+
 HOUSTON_ABILITIES:
-	.DB $A3,$21,$8B,$AB,$B9
-	.DB $A3,$11,$09,$64,$56
-	.DB $A5,$65,$BF,$26
-	.DB $A6,$81,$89,$CB
-	.DB $A5,$53,$9C,$C3
-	.DB $A5,$53,$83,$C3
-	.DB $A5,$71,$9B,$CB
-	.DB $A6,$91,$C7,$CB
-	.DB $A5,$53,$4F,$C3
-	.DB $A3,$21,$9A,$C7
-	.DB $A5,$71,$C4,$C9
-	.DB $A3,$61,$C0,$C6
-	.DB $A3,$47,$47
-	.DB $A3,$49,$2C
-	.DB $A3,$6A,$28
-	.DB $A3,$37,$44
-	.DB $A3,$37,$1E
-	.DB $75,$88,$8F,$28
-	.DB $43,$57,$AE,$26
-	.DB $53,$78,$C8,$28
-	.DB $43,$54,$A5,$45
-	.DB $53,$65,$C6,$25
-	.DB $43,$54,$35,$25
-	.DB $75,$89,$0C,$2A
-	.DB $75,$96,$96,$BB
-	.DB $43,$64,$81,$87
-	.DB $54,$76,$92,$86
-	.DB $43,$66,$C1,$76
-	.DB $C8,$C4,$2E,$54
-	.DB $83,$64,$13,$A8
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_63			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $09															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BF															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $89															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_75			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $83															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_75			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_75			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_63			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_44			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $47															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2C															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $28															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $44															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AE															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A5															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $35															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_75			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $81															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $92															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $13															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
+
 PITTSBURGH_ABILITIES:
-	.DB $A3,$11,$1D,$B3,$85
-	.DB $A3,$11,$42,$65,$35
-	.DB $A5,$55,$13,$C6
-	.DB $A5,$54,$C7,$C6
-	.DB $A5,$54,$A3,$C3
-	.DB $A5,$42,$C3,$C3
-	.DB $A4,$41,$A5,$C8
-	.DB $A3,$31,$CD,$C6
-	.DB $A3,$21,$9F,$C6
-	.DB $A4,$41,$8B,$C6
-	.DB $A3,$49,$C0,$C6
-	.DB $A3,$36,$36,$C6
-	.DB $A3,$58,$A8
-	.DB $A3,$56,$2A
-	.DB $A3,$56,$C6
-	.DB $A3,$37,$A6
-	.DB $A3,$6A,$32
-	.DB $53,$67,$BC,$28
-	.DB $65,$78,$80,$2B
-	.DB $53,$66,$93,$28
-	.DB $75,$89,$96,$4A
-	.DB $65,$87,$CA,$49
-	.DB $53,$66,$CB,$28
-	.DB $53,$66,$4B,$28
-	.DB $86,$BA,$3B,$9B
-	.DB $65,$88,$8F,$88
-	.DB $54,$75,$B0,$86
-	.DB $65,$87,$82,$79
-	.DB $C8,$C4,$15,$97
-	.DB $83,$64,$21,$57
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_25			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $42															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $13															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_19			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A5															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $36															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_44			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A8															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2A															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A6															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BC															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $80															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_75			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $93															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $3B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_75			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $82															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $15															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
+
 DENVER_ABILITIES:
-	.DB $A3,$31,$0E,$B4,$A7
-	.DB $A3,$11,$17,$65,$45
-	.DB $A5,$95,$8C,$75
-	.DB $A5,$33,$83,$77
-	.DB $A6,$34,$B2,$73
-	.DB $A6,$36,$BC,$75
-	.DB $A5,$71,$9E,$78
-	.DB $A5,$61,$B0,$7A
-	.DB $A3,$31,$8D,$76
-	.DB $A3,$31,$21,$77
-	.DB $A4,$47,$A1,$76
-	.DB $A3,$26,$2F,$74
-	.DB $A3,$56,$33
-	.DB $A3,$56,$34
-	.DB $4A,$66,$10
-	.DB $A3,$38,$C0
-	.DB $A3,$37,$AF
-	.DB $43,$56,$88,$24
-	.DB $43,$46,$43,$24
-	.DB $43,$57,$9C,$24
-	.DB $64,$78,$1B,$29
-	.DB $53,$68,$98,$28
-	.DB $43,$54,$41,$25
-	.DB $75,$85,$A2,$2A
-	.DB $43,$25,$80,$54
-	.DB $43,$66,$8E,$74
-	.DB $54,$7A,$C1,$49
-	.DB $65,$87,$AB,$69
-	.DB $C8,$C4,$2E,$A4
-	.DB $83,$64,$0D,$CB
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_31			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_50			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $17															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $83															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BC															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $34															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $10															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AF															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $98															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $41															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $80															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_75			; Kicking Ability, Avoid Kick Block
+
 KANSAS_CITY_ABILITIES:
-	.DB $A3,$01,$0F,$79,$88
-	.DB $A3,$11,$40,$65,$45
-	.DB $B9,$7E,$88,$72
-	.DB $A7,$4B,$D2,$72
-	.DB $A5,$53,$A4,$76
-	.DB $A5,$35,$91,$75
-	.DB $A3,$31,$33,$77
-	.DB $A5,$71,$85,$7B
-	.DB $A4,$51,$9E,$76
-	.DB $A3,$31,$CB,$77
-	.DB $A3,$27,$9C,$74
-	.DB $A3,$27,$9B,$74
-	.DB $A3,$5A,$36
-	.DB $A3,$57,$2B
-	.DB $A3,$38,$47
-	.DB $A3,$2C,$1F
-	.DB $A3,$3A,$27
-	.DB $53,$66,$48,$26
-	.DB $45,$38,$0B,$28
-	.DB $64,$79,$B7,$28
-	.DB $86,$9A,$8E,$2C
-	.DB $64,$79,$43,$28
-	.DB $75,$88,$A1,$47
-	.DB $53,$67,$84,$26
-	.DB $54,$76,$B2,$86
-	.DB $54,$78,$86,$7A
-	.DB $43,$65,$8F,$77
-	.DB $43,$65,$B8,$55
-	.DB $C8,$C4,$31,$CC
-	.DB $83,$64,$09,$49
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $40															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_63			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_94			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_19			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_50			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_75			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $D2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_19			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $91															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $85															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_75			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $36															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2B															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $47															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_81			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1F															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $27															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $48															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_81			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $84															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $31															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_81			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $09															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_63			; Kicking Ability, Avoid Kick Block
+
 LOS_ANGELES_RAIDERS_ABILITIES:
-	.DB $A3,$11,$11,$A4,$69
-	.DB $A3,$11,$10,$65,$45
-	.DB $A5,$B4,$9A,$C2
-	.DB $A5,$83,$8B,$74
-	.DB $A6,$37,$8D,$74
-	.DB $A6,$45,$A6,$72
-	.DB $A5,$71,$86,$99
-	.DB $A6,$91,$84,$78
-	.DB $A6,$81,$B0,$77
-	.DB $A6,$91,$CB,$72
-	.DB $A3,$67,$C0,$76
-	.DB $A3,$25,$1E,$73
-	.DB $A3,$47,$1F
-	.DB $A3,$6A,$32
-	.DB $A3,$48,$24
-	.DB $A3,$77,$C9
-	.DB $A3,$37,$99
-	.DB $75,$89,$93,$4A
-	.DB $43,$4A,$49,$38
-	.DB $75,$8A,$4F,$4A
-	.DB $53,$65,$96,$23
-	.DB $53,$69,$27,$39
-	.DB $43,$55,$26,$63
-	.DB $43,$55,$8A,$63
-	.DB $65,$86,$9B,$57
-	.DB $65,$86,$CA,$57
-	.DB $75,$9A,$AD,$79
-	.DB $43,$67,$C6,$77
-	.DB $C8,$C4,$17,$88
-	.DB $83,$64,$1B,$45
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $11															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $10															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_19			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_19			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_63			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $84															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_19			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1F															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $24															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $99															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $93															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $49															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $27															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $26															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $17															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Kicking Ability, Avoid Kick Block
+
 SAN_DIEGO_ABILITIES:
-	.DB $A3,$11,$13,$C4,$46
-	.DB $A3,$11,$31,$65,$35
-	.DB $A5,$95,$90,$73
-	.DB $A6,$36,$82,$72
-	.DB $A5,$36,$14,$73
-	.DB $A5,$43,$BC,$77
-	.DB $A4,$41,$AA,$76
-	.DB $A5,$61,$97,$7A
-	.DB $A3,$31,$B0,$76
-	.DB $A4,$41,$89,$76
-	.DB $A3,$47,$84,$75
-	.DB $A3,$29,$A1,$74
-	.DB $A3,$48,$8F
-	.DB $A3,$57,$AD
-	.DB $A3,$3A,$1D
-	.DB $A3,$39,$30
-	.DB $A3,$38,$C7
-	.DB $64,$77,$1E,$29
-	.DB $53,$68,$4F,$26
-	.DB $64,$78,$B7,$28
-	.DB $75,$89,$A2,$2A
-	.DB $43,$56,$9E,$25
-	.DB $53,$6A,$24,$26
-	.DB $43,$55,$80,$47
-	.DB $65,$85,$93,$76
-	.DB $75,$97,$CB,$AB
-	.DB $54,$76,$8E,$66
-	.DB $43,$68,$C6,$66
-	.DB $C8,$C4,$1E,$B7
-	.DB $83,$64,$40,$A8
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $13															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $31															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $90															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $82															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_19			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $14															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BC															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $97															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $89															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $84															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AD															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1D															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $30															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $24															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $80															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $93															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $40															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
+
 SEATTLE_ABILITIES:
-	.DB $A3,$11,$17,$3A,$AA
-	.DB $A3,$11,$12,$65,$55
-	.DB $A6,$35,$91,$79
-	.DB $A8,$3B,$92,$73
-	.DB $A5,$54,$A2,$73
-	.DB $A5,$54,$C1,$73
-	.DB $A4,$41,$98,$77
-	.DB $A4,$51,$9B,$78
-	.DB $A3,$31,$03,$76
-	.DB $A4,$51,$34,$76
-	.DB $A3,$26,$21,$74
-	.DB $A3,$36,$A7,$74
-	.DB $A3,$48,$1B
-	.DB $A3,$56,$95
-	.DB $A3,$47,$4B
-	.DB $A3,$67,$2B
-	.DB $A3,$38,$32
-	.DB $53,$67,$A5,$28
-	.DB $43,$56,$51,$24
-	.DB $75,$98,$89,$2A
-	.DB $53,$66,$81,$28
-	.DB $43,$58,$9C,$26
-	.DB $43,$55,$13,$25
-	.DB $43,$55,$C0,$23
-	.DB $43,$55,$92,$56
-	.DB $54,$74,$96,$77
-	.DB $43,$55,$C9,$75
-	.DB $54,$78,$8D,$38
-	.DB $C8,$C4,$2A,$65
-	.DB $83,$64,$36,$69
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $17															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_69			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_69			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $12															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $91															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_75			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $92															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $98															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $03															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $34															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1B															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $95															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4B															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2B															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A5															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $51															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $89															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $81															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $13															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $92															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $36															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Kicking Ability, Avoid Kick Block
+
 WASHINGTON_ABILITIES:
-	.DB $A3,$01,$21,$56,$65
-	.DB $A3,$11,$1F,$65,$45
-	.DB $A5,$73,$A2,$C5
-	.DB $A6,$81,$C5,$C8
-	.DB $A6,$4C,$BF,$C2
-	.DB $A5,$62,$AE,$C5
-	.DB $A5,$65,$85,$C9
-	.DB $A5,$71,$C4,$CB
-	.DB $A5,$54,$C7,$C3
-	.DB $A3,$31,$C1,$C6
-	.DB $A3,$25,$39,$C4
-	.DB $A3,$35,$83,$C4
-	.DB $A3,$5A,$1C
-	.DB $A3,$58,$38
-	.DB $A3,$58,$2B
-	.DB $A3,$4A,$34
-	.DB $A3,$39,$B5
-	.DB $53,$66,$43,$25
-	.DB $43,$57,$96,$26
-	.DB $64,$78,$97,$29
-	.DB $43,$57,$B4,$47
-	.DB $43,$56,$0C,$24
-	.DB $43,$57,$8E,$26
-	.DB $53,$65,$AD,$27
-	.DB $86,$B6,$B1,$64
-	.DB $75,$94,$86,$A5
-	.DB $43,$66,$C3,$74
-	.DB $43,$64,$B0,$64
-	.DB $C8,$C4,$33,$7C
-	.DB $83,$64,$20,$37
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_38			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C5															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_81			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BF															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_19			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_19			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AE															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_38			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $85															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_63			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_75			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $39															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $83															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1C															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $38															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2B															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $34															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B5															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $97															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_81			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $20															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
+
 NEW_YORK_GIANTS_ABILITIES:
-	.DB $A3,$11,$34,$79,$9C
-	.DB $A3,$31,$19,$54,$52
-	.DB $A8,$7D,$93,$B4
-	.DB $A5,$82,$B0,$B7
-	.DB $A6,$36,$96,$73
-	.DB $A5,$45,$B2,$95
-	.DB $A6,$81,$91,$97
-	.DB $A6,$81,$A3,$A8
-	.DB $A3,$31,$C9,$76
-	.DB $A3,$31,$C3,$76
-	.DB $A3,$4A,$1A,$A6
-	.DB $A3,$28,$B0,$84
-	.DB $A3,$57,$1F
-	.DB $A3,$48,$AF
-	.DB $A3,$49,$C0
-	.DB $A3,$3B,$2B
-	.DB $A3,$47,$33
-	.DB $43,$58,$89,$28
-	.DB $43,$57,$51,$27
-	.DB $43,$57,$C1,$26
-	.DB $86,$AB,$CF,$4C
-	.DB $65,$8A,$9C,$4A
-	.DB $53,$65,$26,$96
-	.DB $65,$79,$95,$28
-	.DB $65,$84,$C4,$96
-	.DB $65,$87,$8A,$69
-	.DB $54,$78,$A1,$68
-	.DB $54,$78,$B8,$88
-	.DB $C8,$C4,$20,$69
-	.DB $83,$64,$1C,$CC
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $34															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_81			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $19															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_19			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_88			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $93															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_19			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_50			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_38			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $91															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1F															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AF															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_75			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2B															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $89															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $51															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CF															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_81			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $26															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $95															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $20															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_81			; Kicking Ability, Avoid Kick Block
+
 PHILADELPHIA_ABILITIES:
-	.DB $A3,$81,$D4,$9A,$99
-	.DB $A3,$01,$1B,$55,$55
-	.DB $A5,$45,$8F,$7A
-	.DB $A5,$55,$CD,$44
-	.DB $A5,$45,$C5,$73
-	.DB $A5,$54,$85,$73
-	.DB $A4,$51,$86,$78
-	.DB $A4,$41,$89,$77
-	.DB $A4,$41,$9F,$76
-	.DB $A3,$31,$9C,$76
-	.DB $A3,$79,$CE,$79
-	.DB $A3,$27,$21,$73
-	.DB $A3,$45,$33
-	.DB $A3,$27,$44
-	.DB $A3,$25,$48
-	.DB $A3,$37,$4B
-	.DB $A3,$37,$8A
-	.DB $64,$77,$9B,$2A
-	.DB $43,$57,$2E,$46
-	.DB $75,$8A,$99,$4B
-	.DB $43,$56,$8C,$26
-	.DB $75,$8A,$8D,$29
-	.DB $43,$56,$C7,$46
-	.DB $64,$79,$B1,$4B
-	.DB $75,$67,$C4,$7A
-	.DB $75,$54,$C6,$79
-	.DB $43,$27,$96,$84
-	.DB $43,$24,$8B,$32
-	.DB $C8,$C4,$17,$73
-	.DB $83,$64,$16,$74
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $D4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_69			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_63			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C5															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $85															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $89															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CE															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $44															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $48															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4B															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8A															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $99															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_75			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_75			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_19			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $17															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $16															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Kicking Ability, Avoid Kick Block
+
 PHOENIX_ABILITIES:
-	.DB $A3,$21,$3A,$46,$54
-	.DB $A3,$11,$21,$65,$45
-	.DB $A5,$75,$3D,$75
-	.DB $A5,$61,$C7,$78
-	.DB $A5,$55,$4F,$73
-	.DB $A6,$53,$8A,$74
-	.DB $A3,$21,$4E,$7A
-	.DB $A4,$51,$A2,$78
-	.DB $A5,$55,$A8,$73
-	.DB $A3,$31,$C9,$77
-	.DB $A3,$26,$C0,$75
-	.DB $A3,$25,$32,$73
-	.DB $A3,$45,$09
-	.DB $A3,$38,$B9
-	.DB $A3,$45,$BC
-	.DB $A3,$79,$97
-	.DB $A3,$38,$95
-	.DB $43,$57,$A7,$27
-	.DB $43,$56,$1E,$26
-	.DB $64,$78,$CD,$28
-	.DB $64,$89,$CB,$29
-	.DB $43,$54,$43,$46
-	.DB $43,$45,$A1,$25
-	.DB $43,$45,$8D,$46
-	.DB $43,$52,$96,$74
-	.DB $43,$45,$AA,$66
-	.DB $4A,$66,$8F,$86
-	.DB $65,$88,$CB,$8A
-	.DB $C8,$C4,$2F,$28
-	.DB $83,$64,$1B,$BC
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $3A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $3D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $09															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B9															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BC															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $97															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $95															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_19			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_81			; Kicking Ability, Avoid Kick Block
+
 DALLAS_ABILITIES:
-	.DB $A3,$11,$16,$76,$77
-	.DB $A3,$11,$05,$65,$45
-	.DB $A5,$84,$C6,$75
-	.DB $A5,$36,$C9,$76
-	.DB $A5,$55,$9C,$76
-	.DB $A5,$45,$A3,$73
-	.DB $A4,$51,$96,$78
-	.DB $A5,$61,$A1,$77
-	.DB $A3,$31,$AA,$76
-	.DB $A4,$41,$86,$76
-	.DB $A3,$6A,$50,$7A
-	.DB $A3,$28,$1E,$74
-	.DB $A3,$55,$2C
-	.DB $A3,$47,$4B
-	.DB $A3,$46,$4C
-	.DB $A3,$28,$2F
-	.DB $A3,$3B,$CD
-	.DB $43,$57,$C0,$28
-	.DB $53,$67,$44,$27
-	.DB $54,$78,$A0,$2A
-	.DB $53,$65,$A0,$46
-	.DB $64,$78,$A4,$28
-	.DB $44,$78,$D1,$2A
-	.DB $43,$55,$43,$26
-	.DB $75,$97,$AD,$67
-	.DB $65,$88,$91,$79
-	.DB $54,$78,$A9,$65
-	.DB $54,$77,$C1,$75
-	.DB $C8,$C4,$42,$66
-	.DB $83,$64,$20,$8B
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $16															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $05															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $50															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2C															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4B															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4C															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2F															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_75			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CD															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $44															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $D1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $91															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $42															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $20															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_75			; Kicking Ability, Avoid Kick Block
+
 CHICAGO_ABILITIES:
-	.DB $A3,$11,$1D,$63,$83
-	.DB $A3,$11,$1F,$64,$45
-	.DB $A6,$3E,$40,$78
-	.DB $A7,$97,$88,$77
-	.DB $A5,$43,$A1,$73
-	.DB $A5,$83,$99,$75
-	.DB $A4,$41,$B7,$77
-	.DB $A4,$41,$91,$77
-	.DB $A3,$21,$4C,$76
-	.DB $A3,$21,$9C,$77
-	.DB $A3,$39,$21,$73
-	.DB $A3,$26,$33,$74
-	.DB $A3,$79,$48
-	.DB $A3,$6A,$3F
-	.DB $A3,$57,$36
-	.DB $A3,$47,$51
-	.DB $A3,$47,$13
-	.DB $64,$79,$A5,$6B
-	.DB $45,$2A,$CE,$28
-	.DB $64,$79,$4F,$2A
-	.DB $43,$56,$0C,$46
-	.DB $43,$58,$2A,$29
-	.DB $75,$8B,$A6,$2C
-	.DB $43,$56,$1E,$46
-	.DB $65,$87,$C4,$A8
-	.DB $54,$76,$C1,$99
-	.DB $65,$87,$C9,$CA
-	.DB $43,$66,$A2,$86
-	.DB $C8,$C4,$32,$57
-	.DB $83,$64,$23,$43
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_25			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_94			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $40															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_50			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $99															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $91															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $48															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $3F															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $36															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $51															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $13															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A5															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_75			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CE															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_75			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_81			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $23															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Kicking Ability, Avoid Kick Block
+
 DETROIT_ABILITIES:
-	.DB $A3,$41,$AB,$56,$43
-	.DB $A3,$31,$92,$65,$46
-	.DB $A5,$A3,$9B,$A6
-	.DB $A3,$21,$AD,$77
-	.DB $A6,$43,$98,$73
-	.DB $A5,$82,$86,$77
-	.DB $A3,$21,$B8,$7B
-	.DB $A5,$61,$A1,$7A
-	.DB $A5,$51,$CD,$74
-	.DB $A3,$31,$21,$76
-	.DB $A4,$41,$A4,$76
-	.DB $A3,$31,$D1,$76
-	.DB $A3,$46,$AF
-	.DB $A3,$47,$1B
-	.DB $A3,$45,$24
-	.DB $A3,$58,$8D
-	.DB $A3,$37,$0C
-	.DB $43,$58,$23,$28
-	.DB $64,$6A,$A7,$2A
-	.DB $43,$34,$C7,$24
-	.DB $75,$87,$BF,$48
-	.DB $43,$44,$44,$23
-	.DB $64,$78,$30,$27
-	.DB $43,$43,$96,$23
-	.DB $43,$33,$BE,$57
-	.DB $54,$77,$A2,$77
-	.DB $43,$57,$B0,$65
-	.DB $65,$88,$C0,$88
-	.DB $C8,$C4,$2E,$47
-	.DB $83,$64,$07,$78
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $92															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $98															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_19			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_75			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $D1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AF															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1B															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $24															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $23															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BF															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $44															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $30															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BE															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $07															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
+
 GREEN_BAY_ABILITIES:
-	.DB $A3,$31,$3F,$57,$77
-	.DB $A3,$11,$08,$65,$45
-	.DB $A5,$64,$86,$74
-	.DB $A5,$3E,$98,$73
-	.DB $A5,$54,$9D,$72
-	.DB $A5,$53,$8B,$75
-	.DB $A5,$71,$96,$7B
-	.DB $A4,$41,$82,$77
-	.DB $A3,$31,$A4,$77
-	.DB $A4,$41,$39,$77
-	.DB $A3,$47,$C2,$75
-	.DB $A3,$36,$9A,$74
-	.DB $A3,$55,$2F
-	.DB $A3,$56,$30
-	.DB $A3,$37,$0C
-	.DB $A3,$46,$33
-	.DB $A3,$29,$3A
-	.DB $43,$55,$A8,$26
-	.DB $A3,$58,$31,$28
-	.DB $43,$56,$09,$26
-	.DB $75,$87,$99,$29
-	.DB $43,$44,$C6,$43
-	.DB $43,$44,$4F,$24
-	.DB $43,$44,$87,$54
-	.DB $43,$65,$83,$75
-	.DB $43,$55,$C9,$44
-	.DB $43,$56,$42,$54
-	.DB $43,$66,$37,$75
-	.DB $C8,$C4,$23,$85
-	.DB $83,$64,$2C,$37
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $3F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $08															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_94			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $98															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_19			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_75			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $82															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $39															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2F															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $30															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $3A															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $31															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $09															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $99															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $87															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $83															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $42															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $37															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $23															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_38			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
+
 MINNESOTA_ABILITIES:
-	.DB $A3,$11,$21,$66,$65
-	.DB $A3,$11,$22,$35,$34
-	.DB $A5,$69,$80,$76
-	.DB $A5,$55,$2B,$73
-	.DB $A5,$44,$8B,$73
-	.DB $A5,$44,$8D,$73
-	.DB $A4,$41,$C0,$79
-	.DB $A6,$81,$9F,$7B
-	.DB $A3,$21,$C6,$76
-	.DB $A4,$41,$8F,$77
-	.DB $A3,$69,$B7,$78
-	.DB $A3,$27,$CD,$73
-	.DB $A3,$59,$0B
-	.DB $A3,$7A,$C2
-	.DB $A3,$37,$2A
-	.DB $A3,$4A,$41
-	.DB $A3,$37,$2B
-	.DB $64,$7A,$94,$4A
-	.DB $53,$67,$B9,$29
-	.DB $43,$57,$31,$48
-	.DB $64,$78,$AB,$6A
-	.DB $75,$8A,$1E,$2C
-	.DB $43,$44,$29,$24
-	.DB $43,$44,$2F,$24
-	.DB $54,$75,$CB,$67
-	.DB $75,$98,$88,$7A
-	.DB $54,$76,$B0,$56
-	.DB $75,$98,$AA,$AA
-	.DB $C8,$C4,$13,$69
-	.DB $83,$64,$20,$36
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $22															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_31			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $80															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_75			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0B															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C2															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2A															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $41															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2B															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $94															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $31															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_81			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $29															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $13															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $20															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Kicking Ability, Avoid Kick Block
+
 TAMPA_BAY_ABILITIES:
-	.DB $A3,$41,$23,$48,$66
-	.DB $A3,$11,$42,$65,$45
-	.DB $A5,$73,$CC,$77
-	.DB $A6,$3E,$C7,$76
-	.DB $A5,$44,$80,$73
-	.DB $A5,$53,$97,$73
-	.DB $A5,$61,$B0,$79
-	.DB $A3,$31,$9C,$77
-	.DB $A3,$21,$85,$76
-	.DB $A4,$41,$B8,$76
-	.DB $A3,$56,$32,$76
-	.DB $A3,$46,$C0,$74
-	.DB $A3,$54,$48
-	.DB $A3,$35,$0C
-	.DB $A3,$36,$AF
-	.DB $A3,$37,$1C
-	.DB $A3,$35,$45
-	.DB $43,$54,$43,$26
-	.DB $43,$47,$C8,$26
-	.DB $53,$47,$C1,$25
-	.DB $43,$54,$8E,$23
-	.DB $43,$44,$CD,$45
-	.DB $43,$44,$C0,$23
-	.DB $43,$55,$B4,$28
-	.DB $86,$B6,$C9,$BA
-	.DB $43,$54,$C4,$75
-	.DB $43,$66,$89,$87
-	.DB $54,$77,$AA,$86
-	.DB $C8,$C4,$11,$AB
-	.DB $83,$64,$4A,$5A
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $23															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_56			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $42															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CC															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_94			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $80															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $97															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $85															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $48															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AF															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1C															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $45															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $89															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $11															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_69			; Kicking Ability, Avoid Kick Block
+
 SAN_FRANCISCO_ABILITIES:
-	.DB $A3,$21,$01,$8C,$CB
-	.DB $A3,$31,$33,$86,$78
-	.DB $A5,$73,$D0,$76
-	.DB $A6,$3E,$32,$78
-	.DB $A5,$62,$97,$75
-	.DB $A5,$63,$A0,$74
-	.DB $A5,$71,$C9,$9A
-	.DB $A6,$A1,$A3,$CC
-	.DB $A3,$31,$C0,$76
-	.DB $A5,$61,$85,$77
-	.DB $A3,$5A,$43,$7A
-	.DB $A3,$25,$BE,$74
-	.DB $A3,$59,$82
-	.DB $A3,$47,$AC
-	.DB $A3,$38,$1F
-	.DB $A3,$2A,$AE
-	.DB $A3,$49,$AF
-	.DB $43,$57,$38,$26
-	.DB $43,$5A,$9C,$28
-	.DB $64,$7A,$2A,$27
-	.DB $64,$77,$4F,$29
-	.DB $43,$56,$0C,$26
-	.DB $53,$79,$1C,$49
-	.DB $75,$89,$B7,$2B
-	.DB $54,$75,$8A,$77
-	.DB $43,$66,$8E,$56
-	.DB $86,$AA,$AB,$7B
-	.DB $75,$97,$D1,$A9
-	.DB $C8,$C4,$21,$88
-	.DB $83,$64,$0C,$25
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $01															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_81			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_75			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $D0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_94			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $32															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_19			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $97															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_69			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_81			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $85															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BE															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $82															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AC															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1F															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AE															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AF															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $38															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_75			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_75			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $D1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Kicking Ability, Avoid Kick Block
+
 LOS_ANGELES_RAMS_ABILITIES:
-	.DB $A3,$11,$25,$89,$76
-	.DB $A3,$11,$15,$65,$45
-	.DB $A5,$75,$94,$55
-	.DB $A5,$54,$83,$73
-	.DB $A5,$63,$81,$73
-	.DB $A5,$64,$8D,$77
-	.DB $A6,$81,$BD,$7C
-	.DB $A6,$81,$8B,$7B
-	.DB $A3,$31,$B8,$76
-	.DB $A4,$41,$8E,$76
-	.DB $A3,$28,$43,$78
-	.DB $A3,$26,$B0,$74
-	.DB $A3,$59,$0C
-	.DB $A3,$47,$31
-	.DB $A3,$38,$1F
-	.DB $A3,$39,$A6
-	.DB $A3,$49,$C1
-	.DB $43,$55,$C0,$24
-	.DB $43,$57,$8F,$24
-	.DB $43,$56,$88,$26
-	.DB $43,$55,$9C,$24
-	.DB $43,$55,$B2,$23
-	.DB $43,$54,$1E,$23
-	.DB $75,$8A,$43,$2A
-	.DB $54,$74,$C4,$84
-	.DB $43,$54,$A1,$55
-	.DB $43,$46,$9E,$64
-	.DB $54,$74,$96,$86
-	.DB $C8,$C4,$47,$23
-	.DB $83,$64,$4C,$27
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $25															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_63			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $15															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $94															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $83															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $81															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $BD															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_81			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_75			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $31															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1F															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A6															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C0															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $88															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B2															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C4															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $47															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_25			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
+
 NEW_ORLEANS_ABILITIES:
-	.DB $A3,$11,$26,$65,$77
-	.DB $A3,$11,$28,$66,$45
-	.DB $A6,$3E,$B8,$74
-	.DB $A5,$73,$C3,$73
-	.DB $A5,$63,$C1,$74
-	.DB $A5,$63,$34,$74
-	.DB $A4,$51,$CB,$7A
-	.DB $A3,$31,$C7,$77
-	.DB $A3,$21,$B7,$76
-	.DB $A4,$41,$9A,$76
-	.DB $A3,$26,$46,$75
-	.DB $A3,$25,$13,$74
-	.DB $A3,$67,$1C
-	.DB $A3,$4A,$1F
-	.DB $A3,$47,$2F
-	.DB $A3,$38,$4E
-	.DB $A3,$6A,$39
-	.DB $64,$79,$96,$29
-	.DB $64,$78,$AC,$2A
-	.DB $43,$56,$99,$26
-	.DB $64,$79,$AA,$29
-	.DB $64,$79,$C8,$24
-	.DB $53,$67,$83,$24
-	.DB $43,$55,$CC,$28
-	.DB $43,$55,$AB,$65
-	.DB $54,$76,$95,$87
-	.DB $43,$56,$8D,$67
-	.DB $54,$76,$90,$65
-	.DB $C8,$C4,$27,$8A
-	.DB $83,$64,$44,$96
-	
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $26															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $28															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_94			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C1															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $34															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_69			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $46															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_38			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $13															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1C															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1F															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $2F															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $4E															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $39															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $96															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AC															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_69			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $99															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_63			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C8															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $83															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $CC															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AB															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $95															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $90															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $27															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_69			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $44															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_44			; Kicking Ability, Avoid Kick Block
+
 ATLANTA_ABILITIES:
-	.DB $A3,$11,$33,$46,$74
-	.DB $A3,$11,$28,$55,$45
-	.DB $A5,$73,$C7,$74
-	.DB $A3,$31,$92,$77
-	.DB $A5,$53,$9F,$74
-	.DB $A5,$54,$99,$73
-	.DB $A3,$31,$8D,$77
-	.DB $A6,$91,$D3,$7B
-	.DB $A5,$47,$C6,$73
-	.DB $A4,$41,$8F,$76
-	.DB $A6,$71,$86,$77
-	.DB $A3,$34,$98,$74
-	.DB $A3,$27,$A7
-	.DB $A3,$26,$B2
-	.DB $A3,$67,$09
-	.DB $A3,$45,$1E
-	.DB $A3,$4A,$B2
-	.DB $43,$57,$10,$28
-	.DB $43,$58,$AC,$26
-	.DB $64,$77,$43,$28
-	.DB $43,$55,$C9,$24
-	.DB $43,$55,$12,$24
-	.DB $53,$65,$AA,$27
-	.DB $43,$55,$9C,$24
-	.DB $86,$B8,$9E,$87
-	.DB $43,$44,$8A,$73
-	.DB $43,$54,$46,$73
-	.DB $43,$36,$8B,$72
-	.DB $C8,$C4,$21,$37
-	.DB $83,$64,$0C,$9A
+	; QB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $33															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_44			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Accuracy of Passing, Avoid Pass Block
+	; QB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $28															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Passing Speed, Pass Control
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Accuracy of Passing, Avoid Pass Block
+	; RB1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C7															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $92															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; RB3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; RB4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $99															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8D															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; WR2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $D3															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_75			; Ball Control, Receptions
+	; WR3 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_38			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C6															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Ball Control, Receptions
+	; WR4 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8F															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_44			; Ball Control, Receptions
+	; TE1 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_13			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $86															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Ball Control, Receptions
+	; TE2 Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $98															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Ball Control, Receptions
+	; C Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $A7															; Face Identifier
+	; LG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B2															; Face Identifier
+	; RG Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $09															; Face Identifier
+	; LT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $1E															; Face Identifier
+	; RT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_69			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $B2															; Face Identifier
+	; RE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $10															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; NT Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AC															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_44			; Pass Interceptions, Quickness
+	; LE Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_50			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $43															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_56			; Pass Interceptions, Quickness
+	; ROLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $C9															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; RILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $12															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; LILB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $AA															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LOLB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_38			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_31			; Pass Interceptions, Quickness
+	; RCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_44			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_56			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $9E															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_50			; Pass Interceptions, Quickness
+	; LCB Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8A															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; FS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $46															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_25			; Pass Interceptions, Quickness
+	; SS Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $8B															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_19			; Pass Interceptions, Quickness
+	; K Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_56			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
+	; P Attributes
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_25			; Rushing Power, Running Speed
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_31			; Maximum Speed, Hitting Power
+	ADD_FACE_IDENTIFIER[faceId] $0C															; Face Identifier
+	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_69			; Kicking Ability, Avoid Kick Block
 	
 _F}_PLAYER_ABILITIES
 	
