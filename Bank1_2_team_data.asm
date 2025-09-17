@@ -1882,7 +1882,7 @@ ATTRIBUTE_100 = $0F
 	.DB face_id
 .ENDM
 
-BUFFALO_ABILITIES:
+BUFFALO_BILLS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -2031,7 +2031,7 @@ BUFFALO_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $20															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_63			; Kicking Ability, Avoid Kick Block
 
-INDIANAPOLIS_ABILITIES:
+INDIANAPOLIS_COLTS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -2180,7 +2180,7 @@ INDIANAPOLIS_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $40															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
 
-MIAMI_ABILITIES:
+MIAMI_DOLPHINS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -2329,7 +2329,7 @@ MIAMI_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $B6															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_38			; Kicking Ability, Avoid Kick Block
 
-NEW_ENGLAND_ABILITIES:
+NEW_ENGLAND_PATRIOTS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -2627,7 +2627,7 @@ NEW_YORK_JETS_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $2E															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_75			; Kicking Ability, Avoid Kick Block
 
-CINCINNATI_ABILITIES:
+CINCINNATI_BENGALS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -2776,7 +2776,7 @@ CINCINNATI_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $11															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_69			; Kicking Ability, Avoid Kick Block
 
-CLEVELAND_ABILITIES:
+CLEVELAND_BROWNS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -2925,7 +2925,7 @@ CLEVELAND_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $09															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_19			; Kicking Ability, Avoid Kick Block
 
-HOUSTON_ABILITIES:
+HOUSTON_OILERS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -3074,7 +3074,7 @@ HOUSTON_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $13															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
 
-PITTSBURGH_ABILITIES:
+PITTSBURGH_STEELERS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -3223,7 +3223,7 @@ PITTSBURGH_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $21															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
 
-DENVER_ABILITIES:
+DENVER_BRONCOS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -3372,7 +3372,7 @@ DENVER_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $0D															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_75			; Kicking Ability, Avoid Kick Block
 
-KANSAS_CITY_ABILITIES:
+KANSAS_CITY_CHIEFS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -3670,7 +3670,7 @@ LOS_ANGELES_RAIDERS_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $1B															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_38			; Kicking Ability, Avoid Kick Block
 
-SAN_DIEGO_ABILITIES:
+SAN_DIEGO_CHARGERS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -3819,7 +3819,7 @@ SAN_DIEGO_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $40															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
 
-SEATTLE_ABILITIES:
+SEATTLE_SEAHAWKS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -3968,7 +3968,7 @@ SEATTLE_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $36															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_44, ATTRIBUTE_63			; Kicking Ability, Avoid Kick Block
 
-WASHINGTON_ABILITIES:
+WASHINGTON_REDSKINS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_6, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -4266,7 +4266,7 @@ NEW_YORK_GIANTS_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $1C															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_81, ATTRIBUTE_81			; Kicking Ability, Avoid Kick Block
 
-PHILADELPHIA_ABILITIES:
+PHILADELPHIA_EAGLES_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -4415,7 +4415,7 @@ PHILADELPHIA_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $16															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_31			; Kicking Ability, Avoid Kick Block
 
-PHOENIX_ABILITIES:
+PHOENIX_CARDINALS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -4564,7 +4564,7 @@ PHOENIX_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $1B															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_75, ATTRIBUTE_81			; Kicking Ability, Avoid Kick Block
 
-DALLAS_ABILITIES:
+DALLAS_COWBOYS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -4713,7 +4713,7 @@ DALLAS_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $20															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_56, ATTRIBUTE_75			; Kicking Ability, Avoid Kick Block
 
-CHICAGO_ABILITIES:
+CHICAGO_BEARS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -4862,7 +4862,7 @@ CHICAGO_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $23															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_25			; Kicking Ability, Avoid Kick Block
 
-DETROIT_ABILITIES:
+DETROIT_LIONS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -5011,7 +5011,7 @@ DETROIT_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $07															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_50, ATTRIBUTE_56			; Kicking Ability, Avoid Kick Block
 
-GREEN_BAY_ABILITIES:
+GREEN_BAY_PACKERS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -5160,7 +5160,7 @@ GREEN_BAY_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $2C															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
 
-MINNESOTA_ABILITIES:
+MINNESOTA_VIKINGS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -5309,7 +5309,7 @@ MINNESOTA_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $20															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_25, ATTRIBUTE_44			; Kicking Ability, Avoid Kick Block
 
-TAMPA_BAY_ABILITIES:
+TAMPA_BAY_BUCCANEERS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_31, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -5458,7 +5458,7 @@ TAMPA_BAY_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $4A															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_38, ATTRIBUTE_69			; Kicking Ability, Avoid Kick Block
 
-SAN_FRANCISCO_ABILITIES:
+SAN_FRANCISCO_49ERS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -5756,7 +5756,7 @@ LOS_ANGELES_RAMS_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $4C															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_19, ATTRIBUTE_50			; Kicking Ability, Avoid Kick Block
 
-NEW_ORLEANS_ABILITIES:
+NEW_ORLEANS_SAINTS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
@@ -5905,7 +5905,7 @@ NEW_ORLEANS_ABILITIES:
 	ADD_FACE_IDENTIFIER[faceId] $44															; Face Identifier
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_63, ATTRIBUTE_44			; Kicking Ability, Avoid Kick Block
 
-ATLANTA_ABILITIES:
+ATLANTA_FALCONS_ABILITIES:
 	; QB1 Attributes
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_69, ATTRIBUTE_25			; Rushing Power, Running Speed
 	ADD_NIBBLES_AS_BYTE[nibbleSignificant_nibbleLeast] ATTRIBUTE_13, ATTRIBUTE_13			; Maximum Speed, Hitting Power
