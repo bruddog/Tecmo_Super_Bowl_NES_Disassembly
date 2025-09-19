@@ -577,7 +577,7 @@ DISABLE_INTERRUPTS_RENDERING:                                        ; DISABLE N
 	LDA SOFT_PPU_CTRL                                                ; SET SOFT_PPUCTRL = DISABLE NMI
 	AND #%01111111                                                   ;
 	STA NES_PPU_CTRL                                                 ; SAVE IN PPUCTRL
-	LDA SOFT_PPU_MASK                                                ; SET SOFT_PPUMASK = DON’T SHOW SPRITES AND DON’T SHOW BACKGROUND
+	LDA SOFT_PPU_MASK                                                ; SET SOFT_PPUMASK = DONï¿½T SHOW SPRITES AND DONï¿½T SHOW BACKGROUND
 	AND #%11100111                                                   ;
 	STA NES_PPU_MASK                                                 ; SAVE IN PPUMASK
 	RTS                                                              ; RETURN
@@ -1843,7 +1843,7 @@ UPDATE_ALL_TASKS:                                                    ; UPDATE AL
 	.DB $9D,$00,$00                                                  ; ***BYTE CODED STA $0000,X since asm6 forces to zeropage ****
 	STX $01                                                          ;
 @go_next_task_check_done:                                            ; SET TO NEXT TASK
-	TXA                                                              ; CURRENT TASK INDEX – TASK INDEX OFFSET
+	TXA                                                              ; CURRENT TASK INDEX ï¿½ TASK INDEX OFFSET
 	SEC                                                              ;
 	SBC #TASK_SIZE                                                   ;
 	TAX                                                              ; LOAD INDEX
@@ -2484,7 +2484,7 @@ TEMP_PPU_ADDR_DOWN_ONE_ROW                                           ; PPU ADDRE
 @convert_ascii_value_to_table_index:                                 ; CONVERT LETTER TO UPPER OR LOWER HALF O LARGE LETTER TILE
 	SEC                                                              ;
 	SBC #$20                                                         ;
-	ASL                                                              ; =(2 * LETTER VALUE – LARGE TILE OFFSET)
+	ASL                                                              ; =(2 * LETTER VALUE ï¿½ LARGE TILE OFFSET)
 	CLC                                                              ;
 	ADC upper_lower_letter_offset                                   ; + UPPER OR LOWER HALF OF LETTER OFFSET
 	TAY                                                              ;
@@ -2603,7 +2603,7 @@ DRAW_TEAM_INFO_WITH_JUSTIFY:                                         ;* DRAW TEA
 	BNE @blank_tiles_to_buffer_loop                                  ; DONE? NO-> JUSTIFY TEXT BY FILLING WITH BLANK TILES LOOP
 	
 	STX ending_text_buffer_index                                     ; SAVE BUFFER INDEX
-	LDA max_characters                                               ; = TEXT BUFFER LENGTH – TEAM NAME LENGTH
+	LDA max_characters                                               ; = TEXT BUFFER LENGTH ï¿½ TEAM NAME LENGTH
 	SEC                                                              ;
 	SBC text_length                                                  ;
 	BIT text_align_A000_bank                                         ; DOES JUSTIFY = RIGHT
@@ -2909,12 +2909,12 @@ FADE_OUT_BG_SPR_PAL:                                                 ; FADE OUT 
 	BEQ @fade_out_bg_spr_exit                                        ; YES->EXIT
 	TAX                                                              ; DOES BACKGROUND FADE VALUE = FULLY FADED OUT
 	BEQ @check_spr_pal_faded_out                                     ; YES-> CHECK FOR SPRITE PALLET FADED OUT
-	DEC BG_FADE                                                      ; BACKGROUND FADE VALUE—
+	DEC BG_FADE                                                      ; BACKGROUND FADE VALUEï¿½
 
 @check_spr_pal_faded_out:                                            ; CHECK FOR SPRITE PALLET FADED OUT
 	LDA SPR_FADE                                                     ; DOES SPRITE FADE VALUE = FULLY FADED OUT
 	BEQ @fade_out_transfer_palbuf_ppubuf                             ; YES-> BRANCH TO SAVE PALLETTES TO PALLETE BUFFER AND WAIT ONE FRAME
-	DEC SPR_FADE                                                     ; SPRITE FADE VALUE—
+	DEC SPR_FADE                                                     ; SPRITE FADE VALUEï¿½
 
 @fade_out_transfer_palbuf_ppubuf:                                    ; SAVE PALLETTES TO PALLETE BUFFER AND WAIT ONE FRAME
 	JSR SAVE_PALLETE_BUFFER_TO_PPU_BUFFER                            ; SAVE PALETTE BUFFER TO BUFFER ()
@@ -3377,7 +3377,7 @@ DRAW_PLAYER_NAME_CENTERED:                                           ; DRAW PLAY
 	LDX roster_id                                                    ; LOAD PLAYER
 	JSR GET_PLAYER_NAME_LENGTH                                       ; GET PLAYER NAME LENGTH(A=TEAM, X=PLAYER) RET A= LENGTH
 	STA player_name_length                                           ;
-	LDA #$0F                                                         ; PPU ADDRESS = PPU ADDRESS (15 – NAME LENGHTH)
+	LDA #$0F                                                         ; PPU ADDRESS = PPU ADDRESS (15 ï¿½ NAME LENGHTH)
 	SEC                                                              ;
 	SBC player_name_length                                           ;
 	ADD_A_TO_16BIT_ADDR ppu_addr_temp								 ;
@@ -3447,7 +3447,7 @@ GET_PLAYER_NAME_LENGTH:                                              ; GET PLAYE
 	TXA                                                              ; LOAD PLAYER INDEX
 	ASL                                                              ; SHIFT SINCE EACH POINTER TWO BYTES
 	TAY                                                              ;
-	LDA (data_addr),Y                                                ; LENGTH = CURRENT ADDRESS – NEXT ADDRESS -1
+	LDA (data_addr),Y                                                ; LENGTH = CURRENT ADDRESS ï¿½ NEXT ADDRESS -1
 	TAX                                                              ;
 	INY                                                              ;
 	LDA (data_addr),Y                                                ;
@@ -3762,7 +3762,7 @@ RIGHT_SCROLL_MAX_AMOUNT				= $04							 ; 1/2 YARD
 LEFT_SCROLL_MAX_AMOUNT				= $FC							 ; -1/2 YARD
 
 UPDATE_SCROLL_LOCATION_DIRECTION:                                    ; UPDATE SCROLL LOCATION AND DIRECTION(X,Y= BALL OR PLAYER HIGH,MID LOCATION)
-	TYA                                                              ; =BALL LOCATION X – SCROLL LOCATION X
+	TYA                                                              ; =BALL LOCATION X ï¿½ SCROLL LOCATION X
 	SEC                                                              ;
 	SBC CURR_X_SCROLL                                                ;
 	TAY                                                              ;
@@ -3770,15 +3770,15 @@ UPDATE_SCROLL_LOCATION_DIRECTION:                                    ; UPDATE SC
 	SBC CURR_X_SCROLL+1                                              ;
 	BMI @set_left_scroll_amount                                      ;
 	BNE @set_right_scroll_amount									 ;
-	TYA                                                              ; = LOCATION MID – SCROLL LEFT THRESHOLD
+	TYA                                                              ; = LOCATION MID ï¿½ SCROLL LEFT THRESHOLD
 	SEC                                                              ;
 	SBC LEFT_SCROLL_LIM_FIELD                                        ;
 	BCC @scroll_left_check                                           ; PAST THRESHOLD -> SCROLL LEFT CHECK
-	TYA                                                              ; = LOCATION MID – SCROLL RIGHT THRESHOLD
+	TYA                                                              ; = LOCATION MID ï¿½ SCROLL RIGHT THRESHOLD
 	SEC                                                              ;
 	SBC RIGHT_SCROLL_LIM_FIELD                                       ;
 	BCC @no_scroll_exit                                              ; LOCATION BETWEEN SCROLL THRESHOLD-> BRANCH TO NO SCROLL UPDATE NEEDED
-	CMP #RIGHT_SCROLL_MAX_AMOUNT                                     ; SET LOCATION = SCROLL RIGHT THRESHOLD – 0.5 YARD
+	CMP #RIGHT_SCROLL_MAX_AMOUNT                                     ; SET LOCATION = SCROLL RIGHT THRESHOLD ï¿½ 0.5 YARD
 	BCC @do_right_scroll                                             ; BRANCH TO SCROLLING RIGHT UPDATE
 	
 @set_right_scroll_amount:                                            ;
@@ -3806,7 +3806,7 @@ UPDATE_SCROLL_LOCATION_DIRECTION:                                    ; UPDATE SC
 	BCS @do_left_scroll                                              ;
 	
 @set_left_scroll_amount:                                             ; SET SCROLL LEFT AMOUNT
-	LDA #LEFT_SCROLL_MAX_AMOUNT                                      ; SET LOCATION = SCROLL LEFT THRESHOLD – 0.5 YARDS
+	LDA #LEFT_SCROLL_MAX_AMOUNT                                      ; SET LOCATION = SCROLL LEFT THRESHOLD ï¿½ 0.5 YARDS
 	
 @do_left_scroll:                                                     ; CHECK IF AT END OF LEFT FIELD MAP
 	TAX                                                              ;
@@ -4604,7 +4604,7 @@ temp_Y_loc = LOCAL_8
 	STA (CURRENT_PLAYER_ADDR),Y
 
 @check_non_man_controlled_on_screen:                                 ; CHECK IF NON-MAN CONTROLLED SPRITES ARE ON SCREEN
-	SEC                                                              ; X= PLAYER X – SCROLL X
+	SEC                                                              ; X= PLAYER X ï¿½ SCROLL X
 	SBC CURR_X_SCROLL                                                ;
 	TAX                                                              ;
 	INY                                                              ;
@@ -4694,7 +4694,7 @@ P1_MAN_PLAYER_OFFSCREEN_CHECK:                                       ; PLAYER 1 
 	SEC                                                              ;
 	SBC temp_jump_dive_status                                        ;
 	STA P1_INDICATOR_SPR_Y                                           ; SAVE IN P1 CONTROLLED PLAYER SPRITE Y
-	LDY #X_POS +1                                                      ; = P1 CONTROLLED PLAYER X POSITION HIGH, MID – 0X04 MID
+	LDY #X_POS +1                                                      ; = P1 CONTROLLED PLAYER X POSITION HIGH, MID ï¿½ 0X04 MID
 	LDA (P1_MAN_PLAYER_ADDR),Y                                       ;
 	SEC                                                              ;
 	SBC #$04                                                         ;
@@ -4703,7 +4703,7 @@ P1_MAN_PLAYER_OFFSCREEN_CHECK:                                       ; PLAYER 1 
 	LDA (P1_MAN_PLAYER_ADDR),Y                                       ;
 	SBC #$00                                                         ;
 	TAY                                                              ;
-	TXA                                                              ; X= P1 CONTROLLED PLAYER X MID – 4 – SCROLL WINDOW MID
+	TXA                                                              ; X= P1 CONTROLLED PLAYER X MID ï¿½ 4 ï¿½ SCROLL WINDOW MID
 	SEC                                                              ;
 	SBC CURR_X_SCROLL                                                ;
 	TAX                                                              ;
@@ -4741,7 +4741,7 @@ P1_MAN_PLAYER_OFFSCREEN_CHECK:                                       ; PLAYER 1 
 	SEC                                                              ;
 	SBC temp_jump_dive_status                                        ;
 	STA P2_INDICATOR_SPR_Y                                           ; SAVE IN P\2 CONTROLLED PLAYER SPRITE Y
-	LDY #X_POS + 1                                                  ; = P2 CONTROLLED PLAYER X POSITION HIGH, MID – 0X04 MID
+	LDY #X_POS + 1                                                  ; = P2 CONTROLLED PLAYER X POSITION HIGH, MID ï¿½ 0X04 MID
 	LDA (P2_MAN_PLAYER_ADDR),Y                                       ;
 	SEC                                                              ;
 	SBC #$04                                                         ;
@@ -5348,39 +5348,39 @@ _F{_TEAM_PLAYER_DATA_POINTER_TABLE									; DONE
 		
 TEAM_ABILITY_ADDRESSES:                                              ; TEAM_ABILITY_POINTERS
 
-	.WORD BUFFALO_ABILITIES                                          ; 0x00 BUF
-	.WORD INDIANAPOLIS_ABILITIES                                     ; 0x01 IND
-	.WORD MIAMI_ABILITIES                                            ; 0x02 MIA
-	.WORD NEW_ENGLAND_ABILITIES                                      ; 0x03 NE
-	.WORD NEW_YORK_JETS_ABILITIES                                    ; 0x04 NYJ
-
-	.WORD CINCINNATI_ABILITIES                                       ; 0x05 CIN
-	.WORD CLEVELAND_ABILITIES                                        ; 0x06 CLE
-	.WORD HOUSTON_ABILITIES                                          ; 0x07 HOU
-	.WORD PITTSBURGH_ABILITIES                                       ; 0x08 PIT
-
-	.WORD DENVER_ABILITIES                                           ; 0x09 DEN
-	.WORD KANSAS_CITY_ABILITIES                                      ; 0x0A KC
-	.WORD LOS_ANGELES_RAIDERS_ABILITIES                              ; 0x0B LAR
-	.WORD SAN_DIEGO_ABILITIES                                        ; 0x0C SD
-	.WORD SEATTLE_ABILITIES                                           ; 0x0D SEA
-
-	.WORD WASHINGTON_ABILITIES                                       ; 0x0E WASH
-	.WORD NEW_YORK_GIANTS_ABILITIES                                  ; 0x0F NYG
-	.WORD PHILADELPHIA_ABILITIES                                     ; 0x10 PHI
-	.WORD PHOENIX_ABILITIES                                          ; 0x11 PHX
-	.WORD DALLAS_ABILITIES                                           ; 0x12 DAL
-
-	.WORD CHICAGO_ABILITIES                                          ; 0x13 CHI
-	.WORD DETROIT_ABILITIES                                          ; 0x14 DET
-	.WORD GREEN_BAY_ABILITIES                                        ; 0x15 GB
-	.WORD MINNESOTA_ABILITIES                                        ; 0x16 MIN
-	.WORD TAMPA_BAY_ABILITIES                                        ; 0x17 TB
-
-	.WORD SAN_FRANCISCO_ABILITIES                                    ; 0x18 SF
-	.WORD LOS_ANGELES_RAMS_ABILITIES                                 ; 0x19 RAMS
-	.WORD NEW_ORLEANS_ABILITIES                                      ; 0x1A NO
-	.WORD ATLANTA_ABILITIES                                          ; 0x1B ATL
+	.WORD BUFFALO_BILLS_ABILITIES									; 0x00 BUF.
+	.WORD INDIANAPOLIS_COLTS_ABILITIES								; 0x01 IND.
+	.WORD MIAMI_DOLPHINS_ABILITIES									; 0x02 MIA.
+	.WORD NEW_ENGLAND_PATRIOTS_ABILITIES							; 0x03 N.E.
+	.WORD NEW_YORK_JETS_ABILITIES									; 0x04 JETS
+	
+	.WORD CINCINNATI_BENGALS_ABILITIES								; 0x05 CIN.
+	.WORD CLEVELAND_BROWNS_ABILITIES								; 0x06 CLE.
+	.WORD HOUSTON_OILERS_ABILITIES									; 0x07 HOU.
+	.WORD PITTSBURGH_STEELERS_ABILITIES								; 0x08 PIT.
+	
+	.WORD DENVER_BRONCOS_ABILITIES									; 0x09 DEN.
+	.WORD KANSAS_CITY_CHIEFS_ABILITIES								; 0x0A K.C.
+	.WORD LOS_ANGELES_RAIDERS_ABILITIES								; 0x0B RAI.
+	.WORD SAN_DIEGO_CHARGERS_ABILITIES								; 0x0C S.D.
+	.WORD SEATTLE_SEAHAWKS_ABILITIES								; 0x0D SEA.
+	
+	.WORD WASHINGTON_REDSKINS_ABILITIES								; 0x0E WAS.
+	.WORD NEW_YORK_GIANTS_ABILITIES									; 0x0F GIA.
+	.WORD PHILADELPHIA_EAGLES_ABILITIES								; 0x10 PHI.
+	.WORD PHOENIX_CARDINALS_ABILITIES								; 0x11 PHX.
+	.WORD DALLAS_COWBOYS_ABILITIES									; 0x12 DAL.
+	
+	.WORD CHICAGO_BEARS_ABILITIES									; 0x13 CHI.
+	.WORD DETROIT_LIONS_ABILITIES									; 0x14 DET.
+	.WORD GREEN_BAY_PACKERS_ABILITIES								; 0x15 G.B.
+	.WORD MINNESOTA_VIKINGS_ABILITIES								; 0x16 MIN.
+	.WORD TAMPA_BAY_BUCCANEERS_ABILITIES							; 0x17 T.B.
+	
+	.WORD SAN_FRANCISCO_49ERS_ABILITIES								; 0x18 S.F.
+	.WORD LOS_ANGELES_RAMS_ABILITIES								; 0x19 RAMS
+	.WORD NEW_ORLEANS_SAINTS_ABILITIES								; 0x1A N.O.
+	.WORD ATLANTA_FALCONS_ABILITIES									; 0x1B ATL.
 
 _F}_TEAM_PLAYER_DATA_POINTER_TABLE
 
